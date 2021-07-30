@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      738 字
+      1.2k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      14
        分钟
     </span>
   
@@ -267,14 +267,42 @@
 
 <p>最后载直接进行一个命令操作，你的博客就成功上传到github pages上面去了。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-string">hexo</span> <span class="hljs-string">d</span><br></code></pre></td></tr></table></figure>
-
-
+<h2 id="Hexo的文章书写"><a href="#Hexo的文章书写" class="headerlink" title="Hexo的文章书写"></a>Hexo的文章书写</h2><p>在Hexo想要上传文章十分的简单，只要利用如下命令就可在快速生成一篇文章。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-string">hexo</span> <span class="hljs-string">new</span> <span class="hljs-string">文章题目</span><br></code></pre></td></tr></table></figure>
+<p>Hexo这个框架就会自动在根目录下/source/_posts文件夹下自动生成一个md文件，只要在那里写markdown再保存部署，就可以看到你的文章出现在了线上的博客上了。<br>但是还有一个问题，就是图片引入的问题。在Hexo上的文章不能按照原生markdown的格式来引入，所有图片文件都要放入/source/img文件夹之下，之后文章中的路径直接写/img/图片名字.png即可。</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">![](<span class="hljs-regexp">/img/</span>图片名字)<br></code></pre></td></tr></table></figure>
+<p>这里稍微扩展一下，如果在fluid主题下想要加入展示图的方法，在开头处按如下格式书写即可，图片格式问题和上面一致。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">文章标题</span><br><span class="hljs-attr">tags:</span> [<span class="hljs-string">Hexo</span>, <span class="hljs-string">Fluid</span>]<br><span class="hljs-attr">index_img:</span> <span class="hljs-string">/img/example.jpg</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2019-10-10 10:00:00</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+<h2 id="Hexo的分类和标签"><a href="#Hexo的分类和标签" class="headerlink" title="Hexo的分类和标签"></a>Hexo的分类和标签</h2><p>虽然分类和标签是两种不同的分类方式，但是两者在Hexo中的配置方式大体相同，这里就来共同介绍一下。首先在终端输入指令。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-string">hexo</span> <span class="hljs-string">new</span> <span class="hljs-string">page</span> <span class="hljs-string">categories</span> <span class="hljs-comment">#分类</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">new</span> <span class="hljs-string">page</span> <span class="hljs-string">tags</span> <span class="hljs-comment">#标签</span><br></code></pre></td></tr></table></figure>
+<p>他会输出生成的文件所在的目录。根据他给出的目录进行下一步的配置。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-attr">INFO  Created:</span> <span class="hljs-string">~/Documents/blog/source/categories/index.md</span> <span class="hljs-comment">#分类</span><br><span class="hljs-attr">INFO  Created:</span> <span class="hljs-string">~/Documents/blog/source/tags/index.md</span> <span class="hljs-comment">#标签</span><br></code></pre></td></tr></table></figure>
+<p>之后把两个生成的index.md改为如下的格式。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">文章分类</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2017-05-27 13:47:40</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">&quot;categories&quot;</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">文章标签</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2017-05-27 13:47:40</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">&quot;tags&quot;</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
+<p>之后不做任何操作，他也不会在分类或标签页面生成内容。分类和标签的新增可以直接在文章中添加，在文章中格式如下面所示。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">Hexo的配置</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2021-07-29 15:18:25</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Web前端</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">常用配置</span><br><span class="hljs-attr">categories:</span> <br><span class="hljs-bullet">-</span> <span class="hljs-string">技术分享</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">常用配置</a>
+                    
+                  </div>
                 
               </div>
               
