@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,14 +9,20 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/computer.png">
   <link rel="icon" href="/img/computer.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
   <meta name="description" content="">
   <meta name="author" content="Fusn126">
   <meta name="keywords" content="">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Fusn126的博客">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Fusn126的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Fusn126">
+<meta name="twitter:card" content="summary_large_image">
   
   <title>Fusn126的博客</title>
 
@@ -40,7 +46,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -51,8 +57,9 @@
   <header style="height: 100vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Fusn126的博客</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Fusn126的博客</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -126,13 +133,14 @@
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -147,7 +155,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Perfect life for you and I,peole who's fighting till midnight">
+            <span class="h2" id="subtitle" title=" 首先是犯下首先之罪的我">
               
             </span>
 
@@ -179,7 +187,13 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/07/30/%E5%90%8E%E5%8F%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_self">
+          <img src="/img/backEndEnvironment/title.png" srcset="/img/loading.gif" lazyload alt="后台环境配置">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
         <a href="/2021/07/30/%E5%90%8E%E5%8F%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_self">
@@ -193,8 +207,8 @@
           
             
           
-          后台环境配置这篇文档是我对后端一个入门的学习，主要是搭建一些环境和框架。不涉及什么原理性的知识。是对自己的知识领域的一个扩充。
-安装Java这台电脑连Java都没有安装，首先要安装java。因为都是一些常规的操作，就简略一点的写。就选自己的电脑系统对应版本，大部分人都是windows 64版本。装linux肯定懂得都懂了。之后就按正常的流程安装，和windows装其他软件大体上没什么不同。注意不要
+          这篇文档是我对后端一个入门的学习，主要是搭建一些环境和框架。不涉及什么原理性的知识。是对自己的知识领域的一个扩充。
+安装Java这台电脑连Java都没有安装，首先要安装java。因为都是一些常规的操作，就简略一点的写。就选自己的电脑系统对应版本，大部分人都是windows 64版本。装linux肯定懂得都懂了。之后就按正常的流程安装，和windows装其他软件大体上没什么不同。注意不要有中文目录，
         </a>
       </p>
 
@@ -232,7 +246,13 @@
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/07/29/Git%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
+          <img src="/img/git/title.png" srcset="/img/loading.gif" lazyload alt="Git的配置">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
         <a href="/2021/07/29/Git%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
@@ -246,9 +266,9 @@
           
             
           
-          Gitgit是一个优秀的版本控制软件，自动记录每个版本的变化。方便版本的回退和团队的协作，至少我现在认识到的优点就只有这些。现在最有感受的系统还是分支系统，可以让团队高效的协作。
+          git是一个优秀的版本控制软件，自动记录每个版本的变化。方便版本的回退和团队的协作，至少我现在认识到的优点就只有这些。现在最有感受的系统还是分支系统，可以让团队高效的协作。
 git的配置git安装git的下载就是普通的下载，安装的时候可能有一些可需要注意的点就放一个书签来介绍。
-https://blog.csdn.net/Small_Yogurt/article/details/104966
+https://blog.csdn.net/Small_Yogurt/article/details/104966939
         </a>
       </p>
 
@@ -284,7 +304,13 @@ https://blog.csdn.net/Small_Yogurt/article/details/104966
   <div class="row mx-auto index-card">
     
     
-    <article class="col-12 col-md-12 mx-auto index-info">
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2021/07/29/Hexo%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
+          <img src="/img/hexo/title.png" srcset="/img/loading.gif" lazyload alt="Hexo的配置">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
         
         <a href="/2021/07/29/Hexo%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
@@ -298,8 +324,9 @@ https://blog.csdn.net/Small_Yogurt/article/details/104966
           
             
           
-          HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。利用这个框架和github pages就可以快速搭建外网可以访问的博客。下面首先来说如何配置。
-github pages的申请github pages可以让每个用户不用配置服务器就可以创建一个互联网可以访问的页面。但是他的申请本身可能还有一些需要
+          Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。利用这个框架和github pages就可以快速搭建外网可以访问的博客。下面首先来说如何配置。
+github pages的申请github pages可以让每个用户不用配置服务器就可以创建一个互联网可以访问的页面。但是他的申请本身可能还有一些需要注意。
+
         </a>
       </p>
 
@@ -346,7 +373,7 @@ github pages的申请github pages可以让每个用户不用配置服务器就�
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -412,6 +439,10 @@ github pages的申请github pages可以让每个用户不用配置服务器就�
 <!-- Plugins -->
 
 
+  <script  src="/js/local-search.js" ></script>
+
+
+
   
     <script  src="/js/img-lazyload.js" ></script>
   
@@ -421,18 +452,6 @@ github pages的申请github pages可以让每个用户不用配置服务器就�
   
 
 
-
-
-
-
-
-
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-  <script  src="/js/local-search.js" ></script>
 
 
 
