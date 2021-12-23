@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://example.com/img/backEndEnvironment/h-6.png">
 <meta property="og:image" content="http://example.com/img/backEndEnvironment/h-7.png">
 <meta property="article:published_time" content="2021-07-30T08:14:07.000Z">
-<meta property="article:modified_time" content="2021-09-30T07:26:39.274Z">
+<meta property="article:modified_time" content="2021-12-23T08:07:31.715Z">
 <meta property="article:author" content="Fusn126">
 <meta property="article:tag" content="常用配置">
 <meta property="article:tag" content="Web后端">
@@ -87,7 +87,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fusn126的博客</strong>
+      <strong>Internet Overdose</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -205,7 +205,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      undefined 字
+      2.2k 字
     </span>
   
 
@@ -214,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      NaN 分钟
+      7 分钟
     </span>
   
 
@@ -250,10 +250,8 @@
 <h2 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h2><p>这台电脑连Java都没有安装，首先要安装java。因为都是一些常规的操作，就简略一点的写。就选自己的电脑系统对应版本，大部分人都是windows 64版本。装linux肯定懂得都懂了。<br><img src="/img/backEndEnvironment/h-1.png" srcset="/img/loading.gif" lazyload alt="配置图片"><br>之后就按正常的流程安装，和windows装其他软件大体上没什么不同。注意不要有中文目录，安装目录的文件夹必须为空，在安装前新建一个就好了。<br>之后就是万众期待的配置环境变量了。首先windows的我的电脑属性中，界面的样式变了，这个功能微软把这个界面统一都放到了设置中。<br><img src="/img/backEndEnvironment/h-2.png" srcset="/img/loading.gif" lazyload alt="配置图片"><br>现在是点击右侧的高级系统设置，之后其中找到环境变量的项目。<br><img src="/img/backEndEnvironment/h-3.png" srcset="/img/loading.gif" lazyload alt="配置图片"><br>选择系统变量，点击新建，输入变量名JAVA_HOME，变量值为JDK的目录所在路径。举个例如的D:\Java\jdk1.8.0_281。如图：<br><img src="/img/backEndEnvironment/h-4.png" srcset="/img/loading.gif" lazyload alt="配置图片"><br>选择系统变量，找到Path变量，点击编辑，点击新建，输入%JAVA_HOME%\bin，点击确定。之后在cmd中输入javac不报一些没找到就可以了。</p>
 <h2 id="配置数据库mysql"><a href="#配置数据库mysql" class="headerlink" title="配置数据库mysql"></a>配置数据库mysql</h2><p>首先去官网下载mysql的版本，这里还是有点麻烦的，下载要输入账号。这里下载的是解压版的，安装版的暂时只找到了32位的，和64位的配合不是很好。<br><img src="/img/backEndEnvironment/h-5.png" srcset="/img/loading.gif" lazyload alt="配置图片"><br>下载之后继续解压到你想要安装的目录，之后还要继续配置环境变量。</p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-string">MYSQL_HOME：D:\Program</span> <span class="hljs-string">Files\mysql-8.0.26-winx64</span><br><span class="hljs-string">path：%MYSQL_HOME%\bin;</span><br></code></pre></td></tr></table></figure>
-<p>具体的打开方法上面配置java的时候有说，这里就不再详细介绍了。<br>最开始mysql的目录是没有my.ini,需要自己创建之后填写以下内容：</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs yml">[<span class="hljs-string">mysql</span>]<br><span class="hljs-comment"># 设置mysql客户端默认字符集</span><br><span class="hljs-string">default-character-set=utf8</span><br>[<span class="hljs-string">mysqld</span>]<br><span class="hljs-comment"># 设置3306端口</span><br><span class="hljs-string">port</span> <span class="hljs-string">=</span> <span class="hljs-number">3306</span> <br><span class="hljs-comment"># 设置mysql的安装目录</span><br><span class="hljs-string">basedir</span> <span class="hljs-string">=</span> <span class="hljs-string">D:\\Program</span> <span class="hljs-string">Files\\mysql\\</span><br><span class="hljs-comment"># 设置mysql数据库的数据的存放目录</span><br><span class="hljs-string">datadir</span> <span class="hljs-string">=</span> <span class="hljs-string">D:\\Program</span> <span class="hljs-string">Files\\mysql\\data</span><br><span class="hljs-comment"># 允许最大连接数</span><br><span class="hljs-string">max_connections=20</span><br><span class="hljs-comment"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="hljs-string">character-set-server=utf8</span><br><span class="hljs-comment"># 创建新表时将使用的默认存储引擎</span><br><span class="hljs-string">default-storage-engine=INNODB</span><br><span class="hljs-comment"># 创建模式</span><br><span class="hljs-string">sql_mode</span> <span class="hljs-string">=</span> <span class="hljs-string">NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES</span><br></code></pre></td></tr></table></figure>
-<p>需要注意的是上面的安装目录都是要改为自己的内容。然后用cmd切入mysql安装目录的bin目录，记住要用管理员模式。之后运行这个命令可以初始化root的密码。</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">mysqld <span class="hljs-comment">--initialize</span><br></code></pre></td></tr></table></figure>
+<p>具体的打开方法上面配置java的时候有说，这里就不再详细介绍了。<br>然后用cmd切入mysql安装目录的bin目录，记住要用管理员模式。之后运行这个命令可以初始化root的密码。在新版本的Mysql取消了配置文件，所以新版的MySQL文件夹中没有一些教程中要修改的配置文件。<br>之后把命令也更新了，上次的命令不会在CMD中打印信息，也就不会知道我们的初始密码。</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs brainfuck"><span class="hljs-comment">mysqld</span> --<span class="hljs-comment">initialize</span> --<span class="hljs-comment">user=mysql</span> --<span class="hljs-comment">console</span><br></code></pre></td></tr></table></figure>
 <p><img src="/img/backEndEnvironment/h-6.png" srcset="/img/loading.gif" lazyload alt="配置图片"><br>最后一行的root@localhost:后面的内容就是你的密码。<br>执行mysqld –install命令，安装mysqld服务；</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">mysqld <span class="hljs-comment">--install</span><br></code></pre></td></tr></table></figure>
 <p>执行net start mysql命令，启动mysql服务；</p>
