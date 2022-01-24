@@ -13,16 +13,17 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
   <meta name="author" content="Fusn126">
   <meta name="keywords" content="">
-  <meta property="og:type" content="website">
+  
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Fusn126的博客">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Fusn126的博客">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Fusn126">
 <meta name="twitter:card" content="summary_large_image">
+  
   
   <title>Fusn126的博客</title>
 
@@ -46,7 +47,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -188,6 +189,59 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/01/24/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" target="_self">
+          <img src="/img/eventLoop/title.jpg" srcset="/img/loading.gif" lazyload alt="事件循环">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/01/24/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" target="_self">
+          事件循环
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/01/24/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" target="_self">
+          
+          以前在准备面试的时候对事件循环总是一知半解，直到前几天终于在项目中遇到了这个问题，之后通过导师的讲解和我自己的资料查询，我终于对这个概念有了更深层次的了解。下面来写一下我的感悟。 浏览器拓展首先拓展一下，讲一下浏览器的进程处理机制。首先浏览器本身是多进程，这样的处理方式又多种多样的好处，这里先不展开来讲。这里需要知道浏览器的每一个tab页都代表了一个进程，同时浏览器的这个进程中又包含了许多的线程，
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-01-24 11:18" pubdate>
+              2022-01-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2021/07/30/%E5%90%8E%E5%8F%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_self">
           <img src="/img/backEndEnvironment/title.png" srcset="/img/loading.gif" lazyload alt="后台环境配置">
         </a>
@@ -204,11 +258,7 @@
       <p class="index-excerpt">
         <a href="/2021/07/30/%E5%90%8E%E5%8F%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_self">
           
-          
-            
-          
-          这篇文档是我对后端一个入门的学习，主要是搭建一些环境和框架。不涉及什么原理性的知识。是对自己的知识领域的一个扩充。
-安装Java这台电脑连Java都没有安装，首先要安装java。因为都是一些常规的操作，就简略一点的写。就选自己的电脑系统对应版本，大部分人都是windows 64版本。装linux肯定懂得都懂了。之后就按正常的流程安装，和windows装其他软件大体上没什么不同。注意不要有中文目录，
+          这篇文档是我对后端一个入门的学习，主要是搭建一些环境和框架。不涉及什么原理性的知识。是对自己的知识领域的一个扩充。 安装Java这台电脑连Java都没有安装，首先要安装java。因为都是一些常规的操作，就简略一点的写。就选自己的电脑系统对应版本，大部分人都是windows 64版本。装linux肯定懂得都懂了。之后就按正常的流程安装，和windows装其他软件大体上没什么不同。注意不要有中文目录，
         </a>
       </p>
 
@@ -263,12 +313,7 @@
       <p class="index-excerpt">
         <a href="/2021/07/29/Git%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
           
-          
-            
-          
-          git是一个优秀的版本控制软件，自动记录每个版本的变化。方便版本的回退和团队的协作，至少我现在认识到的优点就只有这些。现在最有感受的系统还是分支系统，可以让团队高效的协作。
-git的配置git安装git的下载就是普通的下载，安装的时候可能有一些可需要注意的点就放一个书签来介绍。
-https://blog.csdn.net/Small_Yogurt/article/details/104966939
+          git是一个优秀的版本控制软件，自动记录每个版本的变化。方便版本的回退和团队的协作，至少我现在认识到的优点就只有这些。现在最有感受的系统还是分支系统，可以让团队高效的协作。 git的配置git安装git的下载就是普通的下载，安装的时候可能有一些可需要注意的点就放一个书签来介绍。 https:&#x2F;&#x2F;blog.csdn.net&#x2F;Small_Yogurt&#x2F;article&#x2F;details&#x2F;104966939
         </a>
       </p>
 
@@ -321,12 +366,7 @@ https://blog.csdn.net/Small_Yogurt/article/details/104966939
       <p class="index-excerpt">
         <a href="/2021/07/29/Hexo%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
           
-          
-            
-          
-          Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。利用这个框架和github pages就可以快速搭建外网可以访问的博客。下面首先来说如何配置。
-github pages的申请github pages可以让每个用户不用配置服务器就可以创建一个互联网可以访问的页面。但是他的申请本身可能还有一些需要注意。
-
+          Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。利用这个框架和github pages就可以快速搭建外网可以访问的博客。下面首先来说如何配置。 github pages的申请github pages可以让每个用户不用配置服务器就可以创建一个互联网可以访问的页面。但是他的申请本身可能有一些需要注意的地方
         </a>
       </p>
 
@@ -464,7 +504,7 @@ github pages的申请github pages可以让每个用户不用配置服务器就�
       var typing = Fluid.plugins.typing;
       var title = document.getElementById('subtitle').title;
       
-      typing(title)
+        typing(title);
       
     })(window, document);
   </script>
