@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/computer.png">
+  <link rel="icon" href="/img/computer.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Fusn126">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="在平常的开发中，数组的遍历可以说是一个最常用到的功能了。但是在JavaScriot中数组遍历有很多的形式，遇到哪种情况该用哪种形式也是需要要掌握的。最近在开发的时候就踩了一个坑，所以就想总结一下这几种形式。 for循环可能是最常用可能也最容易被忽略的遍历方式，因为JS有其他花哨的遍历方式，显得最基础的for循环不是那么的易用。循环的例子如下所示： 1234for (let index&#x3D;0; ind">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组循环">
+<meta property="og:url" content="http://example.com/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/index.html">
+<meta property="og:site_name" content="Fusn126的博客">
+<meta property="og:description" content="在平常的开发中，数组的遍历可以说是一个最常用到的功能了。但是在JavaScriot中数组遍历有很多的形式，遇到哪种情况该用哪种形式也是需要要掌握的。最近在开发的时候就踩了一个坑，所以就想总结一下这几种形式。 for循环可能是最常用可能也最容易被忽略的遍历方式，因为JS有其他花哨的遍历方式，显得最基础的for循环不是那么的易用。循环的例子如下所示： 1234for (let index&#x3D;0; ind">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/arrayErgodic/title.jpg">
+<meta property="article:published_time" content="2022-01-24T06:36:34.000Z">
+<meta property="article:modified_time" content="2022-01-24T06:41:02.122Z">
+<meta property="article:author" content="Fusn126">
+<meta property="article:tag" content="Web前端">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/arrayErgodic/title.jpg">
+  
+  
+  <title>数组循环 - Fusn126的博客</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fusn126的博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/banner/post.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="数组循环">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-24 14:36" pubdate>
+        2022年1月24日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      25 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数组循环</h1>
+            
+            <div class="markdown-body">
+              <p>在平常的开发中，数组的遍历可以说是一个最常用到的功能了。但是在JavaScriot中数组遍历有很多的形式，遇到哪种情况该用哪种形式也是需要要掌握的。最近在开发的时候就踩了一个坑，所以就想总结一下这几种形式。</p>
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>可能是最常用可能也最容易被忽略的遍历方式，因为JS有其他花哨的遍历方式，显得最基础的for循环不是那么的易用。循环的例子如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index=<span class="hljs-number">0</span>; index &lt; someArray.length; index++) &#123;<br> <span class="hljs-keyword">const</span> elem = someArray[index];<br> <span class="hljs-comment">// ···</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>但是for循环虽然用起来可能没有其他形式方便，但是它的速度是最快的。顺便一提，上面的形式还不是for循环的极限。限免是for循环的优化版，在大数据遍历时比上面的形式更有优势。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index=<span class="hljs-number">0</span>; len=someArray.length;index &lt; len; index++) &#123;<br> <span class="hljs-keyword">const</span> elem = someArray[index];<br> <span class="hljs-comment">// ···</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>上面这种形式把长度缓存起来，避免重复获得数组的长度。只有数据量较大时才可以明显看出和第一种的区别。</p>
+<p>除了利用数组的长度作为跳出循环的条件，还可以利用判断元素是否为空来跳出循环。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> index=<span class="hljs-number">0</span>; someArray[index]!=<span class="hljs-literal">null</span> ; index++) &#123;<br> <span class="hljs-keyword">const</span> elem = someArray[index];<br> <span class="hljs-comment">// ···</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>但是实际这种方法的效率还不如第一种方法。这背后有什么原因，以后了解了再说。</p>
+<h2 id="for-in-循环"><a href="#for-in-循环" class="headerlink" title="for-in 循环"></a>for-in 循环</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> key <span class="hljs-keyword">in</span> someArray) &#123;<br> <span class="hljs-built_in">console</span>.log(key);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>for-in也是老资格了，几乎是和for同时出现的方法。它最突出的地方就是作为老方法可以遍历数组和对象。它遍历的是对象的键值或者数组的下标，和for一样。但是它的缺点也是显而易见的，就是太太太慢了，几乎是所有遍历方式中最慢的一种。</p>
+<h2 id="for-of-循环"><a href="#for-of-循环" class="headerlink" title="for-of 循环"></a>for-of 循环</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-string">&#x27;我&#x27;</span>, <span class="hljs-string">&#x27;是&#x27;</span>, <span class="hljs-string">&#x27;谁&#x27;</span>, <span class="hljs-string">&#x27;我&#x27;</span>, <span class="hljs-string">&#x27;在&#x27;</span>, <span class="hljs-string">&#x27;哪&#x27;</span>]<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> key <span class="hljs-keyword">of</span> arr) &#123;<br>    <span class="hljs-built_in">console</span>.log(key)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<p>虽然看起来像是老资格，但是for-of循环是在ES6新加的遍历方式，主要可以遍历所有有<code>Iterator</code> 接口的数据格式，比如Map，Set，String，Array等。但是需要注意的是对象Object并没有<code>Iterator</code> 接口，所以for-of循环不能遍历Object。</p>
+<p>比for循环慢，差不多是排到第二的地位。</p>
+<h2 id="forEach-循环"><a href="#forEach-循环" class="headerlink" title="forEach()循环"></a>forEach()循环</h2><p>forEach()是在ES5中新加入的方式，数组有几个元素，这个方法里的回调函数就会调用几次。第一个参数是数组里的元素，第二个参数为数组里元素的索引，第三个参数则是它自己（利用第三个参数可以进行数组去重）。 数组自带的遍历方法，<code>foreach</code>在循环次数未知或者计算起来较复杂的情况下效率比<code>for</code>循环高。</p>
+<p>需要注意的是forEach()方法没有返回值，所以虽然使用<code>return</code>并不会报错，但是一点用也没有，同时也不能使用<code>break</code>和<code>continue</code>跳出整个循环或当前循环的，会报错，但是结合<code>try...catch</code>可以实现跳出循环。</p>
+<p>速度比不上for循环，但是要比for-in要快，介于for-of和for-in之间的速度。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]<br>arr.forEach(<span class="hljs-function">(<span class="hljs-params">item, idnex, array</span>) =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(item)     <span class="hljs-comment">// 1 2 3 4 5 6</span><br>    <span class="hljs-built_in">console</span>.log(array)    <span class="hljs-comment">// [1, 2, 3, 4, 5, 6]</span><br>&#125;)<br><br><span class="hljs-comment">// 使用try...catch...可以跳出循环</span><br><span class="hljs-keyword">try</span> &#123;<br>   <span class="hljs-keyword">let</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];<br>   arr.forEach(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> &#123;<br>       <span class="hljs-comment">// 跳出条件</span><br>       <span class="hljs-keyword">if</span> (item === <span class="hljs-number">3</span>) &#123;<br>           <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;LoopTerminates&quot;</span>);<br>       &#125;<br>       <span class="hljs-built_in">console</span>.log(item);<br>   &#125;);<br>&#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>    <span class="hljs-keyword">if</span> (e.message !== <span class="hljs-string">&quot;LoopTerminates&quot;</span>) <span class="hljs-keyword">throw</span> e;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
+
+
+<h2 id="map-循环"><a href="#map-循环" class="headerlink" title="map()循环"></a>map()循环</h2><p>forEach()是在原数组进行循环遍历，而map(映射)是克隆一个新的数组来进行遍历，在map中可以使用return来改变新数组的值，但是不能终端遍历。值得一提的是其性能不如forEach()。</p>
+<p>和forEach()一样，不能使用<code>break</code>和<code>continue</code>跳出整个循环或当前循环的，会报错，但是结合<code>try...catch</code>可以实现跳出循环。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">var</span> ary = [<span class="hljs-number">12</span>,<span class="hljs-number">23</span>,<span class="hljs-number">24</span>,<span class="hljs-number">42</span>,<span class="hljs-number">1</span>]; <br><span class="hljs-keyword">var</span> res = ary.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item,index,ary </span>) </span>&#123; <br>    <span class="hljs-keyword">return</span> item*<span class="hljs-number">10</span>; <br>&#125;) <br><span class="hljs-built_in">console</span>.log(res) <span class="hljs-comment">//[ 120, 230, 240, 420, 10 ]</span><br><br><span class="hljs-comment">// 四、使用try...catch...可以跳出循环</span><br><span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">var</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];<br>    arr.map(<span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> &#123;<br>        <span class="hljs-comment">//跳出条件</span><br>        <span class="hljs-keyword">if</span> (item === <span class="hljs-number">3</span>) &#123;<br>            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&quot;LoopTerminates&quot;</span>);<br>        &#125;<br>        <span class="hljs-built_in">console</span>.log(item);<br>        <span class="hljs-keyword">return</span> item<br>    &#125;);<br>&#125; <span class="hljs-keyword">catch</span> (e) &#123;<br>    <span class="hljs-keyword">if</span> (e.message !== <span class="hljs-string">&quot;LoopTerminates&quot;</span>) <span class="hljs-keyword">throw</span> e;<br>&#125;;<br><br></code></pre></td></tr></table></figure>
+
+
+<h2 id="Object-keys"><a href="#Object-keys" class="headerlink" title="Object.keys()"></a>Object.keys()</h2><p>从上面总结的遍历方法上可以看出许多方法都不支持对象的遍历，只有for-in是原生支持对象遍历，但是拜此所致，他的效率不是很高。如果我们想用其他遍历方式遍历对象，有没有办法呢？办法还是有的。</p>
+<p><code>Object.keys()</code>就是这样一个方法，它的参数是一个对象，而它返回的值是一个表示给定对象的所有可枚举属性的字符串数组。用人话来说的话就是一个对象键值所组成的数组。</p>
+<p>那这个键值数组不是就可以遍历了吗。主要的遍历方式还是foreach和map这样可以直接遍历值的方式，因为再遍历数组下标再表示方式会有一些麻烦的地方。</p>
+<p>下面是利用foreach()遍历对象的方式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">let</span> person = &#123;<span class="hljs-attr">name</span>:<span class="hljs-string">&quot;张三&quot;</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">25</span>,<span class="hljs-attr">address</span>:<span class="hljs-string">&quot;深圳&quot;</span>,<span class="hljs-attr">sex</span>:<span class="hljs-string">&#x27;男&#x27;</span>&#125;<br><span class="hljs-built_in">Object</span>.keys(person).forEach(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(item) <span class="hljs-comment">// 打印键值</span><br>    <span class="hljs-built_in">console</span>.log(person[item]) <span class="hljs-comment">//打印键值对应的value</span><br>&#125;)<br></code></pre></td></tr></table></figure>
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/01/24/Vue.set()/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Vue.set()的使用</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/24/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
+                        <span class="hidden-mobile">事件循环</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

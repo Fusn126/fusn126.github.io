@@ -16,23 +16,23 @@
   <meta name="author" content="Fusn126">
   <meta name="keywords" content="">
   
-    <meta name="description" content="以前在准备面试的时候对事件循环总是一知半解，直到前几天终于在项目中遇到了这个问题，之后通过导师的讲解和我自己的资料查询，我终于对这个概念有了更深层次的了解。下面来写一下我的感悟。 浏览器拓展首先拓展一下，讲一下浏览器的进程处理机制。首先浏览器本身是多进程，这样的处理方式又多种多样的好处，这里先不展开来讲。这里需要知道浏览器的每一个tab页都代表了一个进程，同时浏览器的这个进程中又包含了许多的线程，">
+    <meta name="description" content="前几天在开发一个奇形怪状的页面时，发现了一个问题。某些数据赋值后无法修改，只有更新其它数据时才会更新这些数据。后来经过了一索得知了原因，我的属性是动态添加的，但是Vue不能更新在实例创建后添加的属性。 用Vue文档原话可能更好理解一些：**如果在实例创建之后添加新的属性到实例上，它不会触发视图更新** Vue如何追踪变化当你把一个普通的JS对象传给vue实例的data选项时，vue将遍历此对象的所">
 <meta property="og:type" content="article">
-<meta property="og:title" content="事件循环">
-<meta property="og:url" content="http://example.com/2022/01/24/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/index.html">
+<meta property="og:title" content="Vue.set()的使用">
+<meta property="og:url" content="http://example.com/2022/01/24/Vue.set()/index.html">
 <meta property="og:site_name" content="Fusn126的博客">
-<meta property="og:description" content="以前在准备面试的时候对事件循环总是一知半解，直到前几天终于在项目中遇到了这个问题，之后通过导师的讲解和我自己的资料查询，我终于对这个概念有了更深层次的了解。下面来写一下我的感悟。 浏览器拓展首先拓展一下，讲一下浏览器的进程处理机制。首先浏览器本身是多进程，这样的处理方式又多种多样的好处，这里先不展开来讲。这里需要知道浏览器的每一个tab页都代表了一个进程，同时浏览器的这个进程中又包含了许多的线程，">
+<meta property="og:description" content="前几天在开发一个奇形怪状的页面时，发现了一个问题。某些数据赋值后无法修改，只有更新其它数据时才会更新这些数据。后来经过了一索得知了原因，我的属性是动态添加的，但是Vue不能更新在实例创建后添加的属性。 用Vue文档原话可能更好理解一些：**如果在实例创建之后添加新的属性到实例上，它不会触发视图更新** Vue如何追踪变化当你把一个普通的JS对象传给vue实例的data选项时，vue将遍历此对象的所">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/eventLoop/title.jpg">
-<meta property="article:published_time" content="2022-01-24T03:18:07.000Z">
-<meta property="article:modified_time" content="2022-01-24T03:29:25.837Z">
+<meta property="og:image" content="http://example.com/img/vue.set()/title.png">
+<meta property="article:published_time" content="2022-01-24T06:58:48.000Z">
+<meta property="article:modified_time" content="2022-01-24T06:52:58.294Z">
 <meta property="article:author" content="Fusn126">
 <meta property="article:tag" content="Web前端">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/eventLoop/title.jpg">
+<meta name="twitter:image" content="http://example.com/img/vue.set()/title.png">
   
   
-  <title>事件循环 - Fusn126的博客</title>
+  <title>Vue.set()的使用 - Fusn126的博客</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -178,7 +178,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="事件循环">
+            <span class="h2" id="subtitle" title="Vue.set()的使用">
               
             </span>
 
@@ -188,8 +188,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-24 11:18" pubdate>
-        2022年1月24日 上午
+      <time datetime="2022-01-24 14:58" pubdate>
+        2022年1月24日 下午
       </time>
     </span>
   
@@ -199,7 +199,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k 字
+      1.9k 字
     </span>
   
 
@@ -208,7 +208,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      19 分钟
+      17 分钟
     </span>
   
 
@@ -237,38 +237,35 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">事件循环</h1>
+            <h1 style="display: none">Vue.set()的使用</h1>
             
             <div class="markdown-body">
-              <p>以前在准备面试的时候对事件循环总是一知半解，直到前几天终于在项目中遇到了这个问题，之后通过导师的讲解和我自己的资料查询，我终于对这个概念有了更深层次的了解。下面来写一下我的感悟。</p>
-<h2 id="浏览器拓展"><a href="#浏览器拓展" class="headerlink" title="浏览器拓展"></a>浏览器拓展</h2><p>首先拓展一下，讲一下浏览器的进程处理机制。首先浏览器本身是多进程，这样的处理方式又多种多样的好处，这里先不展开来讲。这里需要知道浏览器的每一个tab页都代表了一个进程，同时浏览器的这个进程中又包含了许多的线程，主要包括GUI 渲染线程（负责渲染页面，解析 HTML，CSS 构成 DOM 树）、JS 引擎线程、事件触发线程、定时器触发线程、http 请求线程等主要线程。</p>
-<h2 id="Javascript的工作线程"><a href="#Javascript的工作线程" class="headerlink" title="Javascript的工作线程"></a>Javascript的工作线程</h2><p>Js执行主要有两个线程，第一个是主线程，这个线程有且仅有一个页面渲染、函数处理都在这个主线程上执行；第二个工作线程，也叫做幕后线程这个线程主要存在于浏览器和Js引擎之中，主要负责异步，文件读取等操作。</p>
-<h2 id="任务队列"><a href="#任务队列" class="headerlink" title="任务队列"></a>任务队列</h2><p>Js中的所有任务都可以分为同步任务和异步任务。同步任务顾名思义就是按照代码所写的顺序瞬间执行，而异步任务则是按照任务队列机制来运行的。</p>
-<p><img src="/img/eventLoop/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF.png" srcset="/img/loading.gif" lazyload></p>
-<p>上面这个图简单描述了事件循环的过程，当任务进入执行栈中时，首先判断他是同步任务还是异步任务。同步任务进入执行栈立即执行，异步任务则进入任务队列。当所有的同步任务执行完毕之后，再读取任务队列中的微任务，让其进入主线程执行。上述过程的不断重复就是我们说的 Event Loop (事件循环)。</p>
-<h2 id="宏任务和微任务"><a href="#宏任务和微任务" class="headerlink" title="宏任务和微任务"></a>宏任务和微任务</h2><p>但是整个事件循环还有更复杂的机制，也就是所谓的宏任务和微任务。但是在介绍两者之前，我们再补充一个知识，tick的概念，tick是指事件循环每一次循环的操作，其概述的步骤如下所示。</p>
-<ol>
-<li>在这次循环中选择最新进入队列的宏任务，立即执行一次。</li>
-<li>检测是否存在微任务，如果有立即执行到清空微任务队列。</li>
-<li>更新 render。</li>
-<li>重复执行上述以上步骤。</li>
-</ol>
-<p>这里就要介绍宏任务和微任务的定义是什么了：</p>
-<p>宏任务主要包含：script( 整体代码)、setTimeout、setInterval、I/O、UI 交互事件、setImmediate(Node.js 环境)</p>
-<p>微任务主要包含：Promise、MutaionObserver、process.nextTick(Node.js 环境)</p>
-<p>从上面就可以看出宏任务之中包括同步任务和异步任务，这两种分类方式时没有必然联系的，这里也是我以前的一个误区。下面这个图来显示一个tick所操作的流程。需要注意的是执行完最先进入队列的宏任务之后整个tick就结束了，在微任务之后进入的宏任务在此次tick中并不会执行。</p>
-<p><img src="/img/eventLoop/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF_1.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;script start&#x27;</span>);<br><br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;setTimeout&#x27;</span>);<br>&#125;, <span class="hljs-number">0</span>);<br><br><span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;promise1&#x27;</span>);<br>&#125;).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;promise2&#x27;</span>);<br>&#125;);<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;script end&#x27;</span>);<br></code></pre></td></tr></table></figure>
+              <p>前几天在开发一个奇形怪状的页面时，发现了一个问题。某些数据赋值后无法修改，只有更新其它数据时才会更新这些数据。后来经过了一索得知了原因，我的属性是动态添加的，但是Vue不能更新在实例创建后添加的属性。</p>
+<p>用Vue文档原话可能更好理解一些：<code>**如果在实例创建之后添加新的属性到实例上，它不会触发视图更新**</code></p>
+<h2 id="Vue如何追踪变化"><a href="#Vue如何追踪变化" class="headerlink" title="Vue如何追踪变化"></a>Vue如何追踪变化</h2><p>当你把一个普通的JS对象传给vue实例的data选项时，vue将遍历此对象的所有属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter 。</p>
+<p>vue不允许在已经创建的实例上动态添加新的根级响应式属性，不过<strong>可以使用Vue.set()方法将响应式属性添加到嵌套的对象上。</strong></p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>上面说过对象中未经过data域声明的元素，都没有setter属性，也就无法触发视图更新。我出错的代码如下面这种形式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></div></td><td class="code"><pre><code class="hljs JavaScript">vm.nowData.scoreDetails.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> &#123;<br>          vm.pointData[item.qualityClass][item.qualityPro].forEach(<span class="hljs-function">(<span class="hljs-params">element, key</span>) =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (element.qualityCode == item.qualityCode) &#123;<br>              vm.pointData[item.qualityClass][item.qualityPro][key].isPass = item.isPass<br>              vm.pointData[item.qualityClass][item.qualityPro][key].problemClassList = item.problemClassList<br>              vm.pointData[item.qualityClass][item.qualityPro][key].score = item.score<br>            &#125;<br>            vm.countData = vm.nowData<br>          &#125;)<br>        &#125;)<br></code></pre></td></tr></table></figure>
 
 
-<p>答案：script start, script end, promise1, promise2, setTimeout</p>
-<p>这个有两次tick，首先读取代码整体 script 作为第一个宏任务进入主线程，遇到 console.log，输出 script start 。遇到 setTimeout，其回调函数被分发到宏任务 Event Queue 中。遇到 Promise，其 then函数被分到到微任务 Event Queue 中,记为 then1，之后又遇到了 then 函数，将其分到微任务 Event Queue 中，记为 then2。遇到 console.log，输出 script end。</p>
-<p>然后读取任务队列中的任务，setTimeout，then1，then2进入主线程，因为宏任务已经执行完成，所以执行微任务then1和then2，本次tick结束。下一次tick开始，执行setTimeout，没有微任务，第二次tick结束。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;script start&#x27;</span>);<br><br><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;timeout1&#x27;</span>);<br>&#125;, <span class="hljs-number">10</span>);<br><br><span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> &#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;promise1&#x27;</span>);<br>    resolve();<br>    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;timeout2&#x27;</span>), <span class="hljs-number">10</span>);<br>&#125;).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;then1&#x27;</span>)<br>&#125;)<br><br><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;script end&#x27;</span>);<br></code></pre></td></tr></table></figure>
+<p>因为元素都是循环动态添加进去的，没有办法一开始在data域中声明。这个时候怎么办？这个时候就可以利用set方法了。</p>
+<p>下面是VueApi文档中对Set的描述。</p>
+<h3 id="Vue-set-target-propertyName-index-value"><a href="#Vue-set-target-propertyName-index-value" class="headerlink" title="Vue.set( target, propertyName/index, value )"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#Vue-set">Vue.set( target, propertyName/index, value )</a></h3><ul>
+<li><strong>参数</strong>：<ul>
+<li><code>&#123;Object | Array&#125; target</code></li>
+<li><code>&#123;string | number&#125; propertyName/index</code></li>
+<li><code>&#123;any&#125; value</code></li>
+</ul>
+</li>
+<li><strong>返回值</strong>：设置的值。</li>
+<li><strong>用法</strong>：<br>  向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新 property，因为 Vue 无法探测普通的新增 property (比如 <code>this.myObject.newProperty = &#39;hi&#39;</code>)</li>
+</ul>
+<p>第一个参数是你想添加属性的对象，注意这个对象不能是Vue实例，第二个参数是属性的key值，第三个参数是属性的值。这样添加进去的值就可以触发视图更新。</p>
+<p>修改的代码如下面所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">vm.nowData.scoreDetails.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> &#123;<br>          vm.pointData[item.qualityClass][item.qualityPro].forEach(<span class="hljs-function">(<span class="hljs-params">element, key</span>) =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (element.qualityCode == item.qualityCode) &#123;<br>              vm.$set(vm.pointData[item.qualityClass][item.qualityPro][key], <span class="hljs-string">&#x27;remark&#x27;</span>, item.remark) <span class="hljs-comment">// 因为质检点的数据是动态生成无法在data域中声明，因此要用set方法赋予作用域</span><br>              vm.$set(vm.pointData[item.qualityClass][item.qualityPro][key], <span class="hljs-string">&#x27;qualityCommon&#x27;</span>, item.qualityCommon)<br>              vm.$set(vm.pointData[item.qualityClass][item.qualityPro][key], <span class="hljs-string">&#x27;qualityScore&#x27;</span>, item.qualityScore)<br>            &#125;<br>            vm.countData = vm.nowData<br>          &#125;)<br>        &#125;)<br></code></pre></td></tr></table></figure>
 
 
-<p>答案：script start, promise1, script end, then1, timeout1, timeout2</p>
-<p>这题是练习题，具体的执行顺序可以自己想一下，运用上面的知识应该是不成问题的。</p>
+<p>还有一个需要注意的点是，这个方法是针对Vue2的，Vue3的底层都改变了，不再有Vue这个实例，在文档中也找不到set这个方法。</p>
 
             </div>
             <hr>
@@ -303,18 +300,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数组循环</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/30/%E5%90%8E%E5%8F%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
-                        <span class="hidden-mobile">后台环境配置</span>
+                      <a href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/">
+                        <span class="hidden-mobile">数组循环</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
