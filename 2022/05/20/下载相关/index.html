@@ -16,25 +16,26 @@
   <meta name="author" content="Fusn126">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前几天在开发一个奇形怪状的页面时，发现了一个问题。某些数据赋值后无法修改，只有更新其它数据时才会更新这些数据。后来经过了一索得知了原因，我的属性是动态添加的，但是Vue不能更新在实例创建后添加的属性。 用Vue文档原话可能更好理解一些：**如果在实例创建之后添加新的属性到实例上，它不会触发视图更新** Vue如何追踪变化当你把一个普通的JS对象传给vue实例的data选项时，vue将遍历此对象的所">
+    <meta name="description" content="最近在项目中遇到了与下载有关的问题，正好总结一下相关的内容。 如果是本地或同源的资源，直接在a标签中加入downlaod即可。这样不管什么资源都可以直接下载。 1&lt;a href&#x3D;&quot;img&#x2F;1.png&quot; download&#x3D;&quot;download&quot;&gt;下载&lt;&#x2F;a&gt;  下面是用js直接生成a标签的写法。 123456789const a &#x3D; do">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue.set()的使用">
-<meta property="og:url" content="http://example.com/2022/01/24/Vue.set()/index.html">
+<meta property="og:title" content="前端下载相关">
+<meta property="og:url" content="http://example.com/2022/05/20/%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="Fusn126的博客">
-<meta property="og:description" content="前几天在开发一个奇形怪状的页面时，发现了一个问题。某些数据赋值后无法修改，只有更新其它数据时才会更新这些数据。后来经过了一索得知了原因，我的属性是动态添加的，但是Vue不能更新在实例创建后添加的属性。 用Vue文档原话可能更好理解一些：**如果在实例创建之后添加新的属性到实例上，它不会触发视图更新** Vue如何追踪变化当你把一个普通的JS对象传给vue实例的data选项时，vue将遍历此对象的所">
+<meta property="og:description" content="最近在项目中遇到了与下载有关的问题，正好总结一下相关的内容。 如果是本地或同源的资源，直接在a标签中加入downlaod即可。这样不管什么资源都可以直接下载。 1&lt;a href&#x3D;&quot;img&#x2F;1.png&quot; download&#x3D;&quot;download&quot;&gt;下载&lt;&#x2F;a&gt;  下面是用js直接生成a标签的写法。 123456789const a &#x3D; do">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/vue.set()/title.png">
-<meta property="article:published_time" content="2022-01-24T06:58:48.000Z">
-<meta property="article:modified_time" content="2022-05-20T03:57:10.316Z">
+<meta property="og:image" content="http://example.com/img/tableRow/title.jpg">
+<meta property="article:published_time" content="2022-05-20T06:58:48.000Z">
+<meta property="article:modified_time" content="2022-05-20T06:29:55.501Z">
 <meta property="article:author" content="Fusn126">
 <meta property="article:tag" content="Web前端">
-<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="Javascript">
+<meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/vue.set()/title.png">
+<meta name="twitter:image" content="http://example.com/img/tableRow/title.jpg">
   
   
   
-  <title>Vue.set()的使用 - Fusn126的博客</title>
+  <title>前端下载相关 - Fusn126的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +198,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Vue.set()的使用"></span>
+            <span id="subtitle" data-typed-text="前端下载相关"></span>
           
         </div>
 
@@ -208,8 +209,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-01-24 14:58" pubdate>
-          2022年1月24日 下午
+        <time datetime="2022-05-20 14:58" pubdate>
+          2022年5月20日 下午
         </time>
       </span>
     
@@ -221,7 +222,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.9k 字
+          1.6k 字
         
       </span>
     
@@ -233,7 +234,7 @@
         
         
           <!-- compatible with older versions-->
-          17 分钟
+          14 分钟
         
       </span>
     
@@ -271,36 +272,30 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Vue.set()的使用</h1>
+            <h1 style="display: none">前端下载相关</h1>
             
             <div class="markdown-body">
               
-              <p>前几天在开发一个奇形怪状的页面时，发现了一个问题。某些数据赋值后无法修改，只有更新其它数据时才会更新这些数据。后来经过了一索得知了原因，我的属性是动态添加的，但是Vue不能更新在实例创建后添加的属性。</p>
-<p>用Vue文档原话可能更好理解一些：<code>**如果在实例创建之后添加新的属性到实例上，它不会触发视图更新**</code></p>
-<h2 id="Vue如何追踪变化"><a href="#Vue如何追踪变化" class="headerlink" title="Vue如何追踪变化"></a>Vue如何追踪变化</h2><p>当你把一个普通的JS对象传给vue实例的data选项时，vue将遍历此对象的所有属性，并使用 Object.defineProperty 把这些属性全部转为 getter&#x2F;setter 。</p>
-<p>vue不允许在已经创建的实例上动态添加新的根级响应式属性，不过<strong>可以使用Vue.set()方法将响应式属性添加到嵌套的对象上。</strong></p>
-<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>上面说过对象中未经过data域声明的元素，都没有setter属性，也就无法触发视图更新。我出错的代码如下面这种形式。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">vm.<span class="hljs-property">nowData</span>.<span class="hljs-property">scoreDetails</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> &#123;<br>          vm.<span class="hljs-property">pointData</span>[item.<span class="hljs-property">qualityClass</span>][item.<span class="hljs-property">qualityPro</span>].<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">element, key</span>) =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (element.<span class="hljs-property">qualityCode</span> == item.<span class="hljs-property">qualityCode</span>) &#123;<br>              vm.<span class="hljs-property">pointData</span>[item.<span class="hljs-property">qualityClass</span>][item.<span class="hljs-property">qualityPro</span>][key].<span class="hljs-property">isPass</span> = item.<span class="hljs-property">isPass</span><br>              vm.<span class="hljs-property">pointData</span>[item.<span class="hljs-property">qualityClass</span>][item.<span class="hljs-property">qualityPro</span>][key].<span class="hljs-property">problemClassList</span> = item.<span class="hljs-property">problemClassList</span><br>              vm.<span class="hljs-property">pointData</span>[item.<span class="hljs-property">qualityClass</span>][item.<span class="hljs-property">qualityPro</span>][key].<span class="hljs-property">score</span> = item.<span class="hljs-property">score</span><br>            &#125;<br>            vm.<span class="hljs-property">countData</span> = vm.<span class="hljs-property">nowData</span><br>          &#125;)<br>        &#125;)<br></code></pre></td></tr></table></figure>
+              <p>最近在项目中遇到了与下载有关的问题，正好总结一下相关的内容。</p>
+<p>如果是本地或同源的资源，直接在<code>a</code>标签中加入<code>downlaod</code>即可。这样不管什么资源都可以直接下载。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;img/1.png&quot;</span> <span class="hljs-attr">download</span>=<span class="hljs-string">&quot;download&quot;</span>&gt;</span>下载<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
+<p>下面是用js直接生成<code>a</code>标签的写法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> a = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;a&#x27;</span>)<br>a.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span><br><span class="hljs-keyword">const</span> url = <span class="hljs-string">&#x27;img/1.png&#x27;</span><br>a.<span class="hljs-property">href</span> = url<br>a.<span class="hljs-property">download</span> = <span class="hljs-string">&#x27;download&#x27;</span><br><span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(a)<br>a.<span class="hljs-title function_">click</span>()<br><span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">removeChild</span>(a)<br><span class="hljs-variable language_">window</span>.<span class="hljs-property">URL</span>.<span class="hljs-title function_">revokeObjectURL</span>(url)<br></code></pre></td></tr></table></figure>
 
-<p>因为元素都是循环动态添加进去的，没有办法一开始在data域中声明。这个时候怎么办？这个时候就可以利用set方法了。</p>
-<p>下面是VueApi文档中对Set的描述。</p>
-<h3 id="Vue-set-target-propertyName-x2F-index-value"><a href="#Vue-set-target-propertyName-x2F-index-value" class="headerlink" title="Vue.set( target, propertyName&#x2F;index, value )"></a><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#Vue-set">Vue.set( target, propertyName&#x2F;index, value )</a></h3><ul>
-<li><strong>参数</strong>：<ul>
-<li><code>&#123;Object | Array&#125; target</code></li>
-<li><code>&#123;string | number&#125; propertyName/index</code></li>
-<li><code>&#123;any&#125; value</code></li>
-</ul>
-</li>
-<li><strong>返回值</strong>：设置的值。</li>
-<li><strong>用法</strong>：<br>  向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新 property，因为 Vue 无法探测普通的新增 property (比如 <code>this.myObject.newProperty = &#39;hi&#39;</code>)</li>
-</ul>
-<p>第一个参数是你想添加属性的对象，注意这个对象不能是Vue实例，第二个参数是属性的key值，第三个参数是属性的值。这样添加进去的值就可以触发视图更新。</p>
-<p>修改的代码如下面所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript">vm.<span class="hljs-property">nowData</span>.<span class="hljs-property">scoreDetails</span>.<span class="hljs-title function_">forEach</span>(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> &#123;<br>          vm.<span class="hljs-property">pointData</span>[item.<span class="hljs-property">qualityClass</span>][item.<span class="hljs-property">qualityPro</span>].<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">element, key</span>) =&gt;</span> &#123;<br>            <span class="hljs-keyword">if</span> (element.<span class="hljs-property">qualityCode</span> == item.<span class="hljs-property">qualityCode</span>) &#123;<br>              vm.$set(vm.<span class="hljs-property">pointData</span>[item.<span class="hljs-property">qualityClass</span>][item.<span class="hljs-property">qualityPro</span>][key], <span class="hljs-string">&#x27;remark&#x27;</span>, item.<span class="hljs-property">remark</span>) <span class="hljs-comment">// 因为质检点的数据是动态生成无法在data域中声明，因此要用set方法赋予作用域</span><br>              vm.$set(vm.<span class="hljs-property">pointData</span>[item.<span class="hljs-property">qualityClass</span>][item.<span class="hljs-property">qualityPro</span>][key], <span class="hljs-string">&#x27;qualityCommon&#x27;</span>, item.<span class="hljs-property">qualityCommon</span>)<br>              vm.$set(vm.<span class="hljs-property">pointData</span>[item.<span class="hljs-property">qualityClass</span>][item.<span class="hljs-property">qualityPro</span>][key], <span class="hljs-string">&#x27;qualityScore&#x27;</span>, item.<span class="hljs-property">qualityScore</span>)<br>            &#125;<br>            vm.<span class="hljs-property">countData</span> = vm.<span class="hljs-property">nowData</span><br>          &#125;)<br>        &#125;)<br></code></pre></td></tr></table></figure>
+<p>但是我们不能什么都下载本地的东西，那样前端会变得很臃肿。这时我们就要用到后端提供的url来进行下载，但是这时候下载url大概率和我们的前端不是同源的，这时下载规则就有一些不一样了。</p>
+<p>当我们下载浏览器不能直接打开的资源时，同源和异源一样。直接<code>a</code>标签上加上<code>download</code>就可。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://down1.downxia.com/down/DocX2021a_pan.rar&quot;</span> <span class="hljs-attr">download</span>=<span class="hljs-string">&quot;download&quot;</span>&gt;</span>下载<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
+<p>但是当我们要下载图片或者pdf等浏览器可以打开的格式时，加上<code>download</code>属性也会直接用浏览器访问该资源。</p>
+<p>究其原因，<code>download</code>属性仅适用于<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" title="同源 URL">同源 URL</a>。就算不加上<code>download</code>属性，浏览器无法打开的文件url也会直接下载。但是浏览器可以打开的资源就会直接打开。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;https://www.keaidian.com/uploads/allimg/190424/24110307_23.jpg&quot;</span> <span class="hljs-attr">download</span>=<span class="hljs-string">&quot;download&quot;</span>&gt;</span>下载<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>还有一个需要注意的点是，这个方法是针对Vue2的，Vue3的底层都改变了，不再有Vue这个实例，在文档中也找不到set这个方法。</p>
+<p>这时想要下载，可以让后端处理。让其对<code>Content-Disposition</code>头进行特殊处理。或者可以请求文件流来直接下载该文件，但需要注意使用文件流，需要先获取全部的文件流，所以并不适合过大的文件。</p>
+<p>利用js下载的代码如下所示，这里请求方式是<code>fetch</code>，但是这个和请求方式无关，想用<code>xhr</code>或者<code>axios</code>都可以进行下载工作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> url = <span class="hljs-string">&quot;https://www.keaidian.com/uploads/allimg/190424/24110307_23.jpg&quot;</span><br><span class="hljs-title function_">fetch</span>(url).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.<span class="hljs-title function_">blob</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">blob</span> =&gt;</span> &#123;<br>  <span class="hljs-keyword">let</span> a = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;a&#x27;</span>);<br>  a.<span class="hljs-property">style</span>.<span class="hljs-property">display</span> = <span class="hljs-string">&#x27;none&#x27;</span><br>  <span class="hljs-keyword">let</span> url = <span class="hljs-variable language_">window</span>.<span class="hljs-property">URL</span>.<span class="hljs-title function_">createObjectURL</span>(blob); <span class="hljs-comment">// 获取 blob 本地文件连接 (blob 为纯二进制对象，不能够直接保存到磁盘上)</span><br>  <span class="hljs-keyword">const</span> filename = <span class="hljs-string">&#x27;download&#x27;</span><br>  a.<span class="hljs-property">href</span> = url;<br>  a.<span class="hljs-property">download</span> = filename;<br>  <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">appendChild</span>(a)<br>  a.<span class="hljs-title function_">click</span>();<br>    <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>.<span class="hljs-title function_">removeChild</span>(a)<br>    <span class="hljs-variable language_">window</span>.<span class="hljs-property">URL</span>.<span class="hljs-title function_">revokeObjectURL</span>(url)<br>&#125;));<br></code></pre></td></tr></table></figure>
+
+<p>需要注意的是就算用了上面这串代码，也无法解决跨域问题。跨域的问题需要去单独解决，不管使用反代理还是要后端去操作。</p>
 
               
             </div>
@@ -335,7 +330,9 @@
       
         <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
       
-        <a href="/tags/Vue/">#Vue</a>
+        <a href="/tags/Javascript/">#Javascript</a>
+      
+        <a href="/tags/HTML/">#HTML</a>
       
     </div>
   
@@ -347,8 +344,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Vue.set()的使用</div>
-      <div>http://example.com/2022/01/24/Vue.set()/</div>
+      <div>前端下载相关</div>
+      <div>http://example.com/2022/05/20/下载相关/</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +357,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年1月24日</div>
+          <div>2022年5月20日</div>
         </div>
       
       
@@ -390,9 +387,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">
+                      <a href="/2022/05/20/HTML%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C(rowspan%E3%80%81colspan)/" title="HTML表格跨行、跨列操作(rowspan、colspan)">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">正则表达式</span>
+                        <span class="hidden-mobile">HTML表格跨行、跨列操作(rowspan、colspan)</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -400,8 +397,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/" title="数组遍历">
-                        <span class="hidden-mobile">数组遍历</span>
+                      <a href="/2022/05/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式">
+                        <span class="hidden-mobile">正则表达式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -25,15 +25,19 @@
 <meta name="twitter:card" content="summary_large_image">
   
   
+  
   <title>Fusn126的博客</title>
 
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -42,24 +46,43 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
 
 
 <body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 100vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fusn126的博客</strong>
+      <strong>Fusn的博客</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -138,6 +161,7 @@
               &nbsp;<i class="iconfont icon-search"></i>&nbsp;
             </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
@@ -150,40 +174,324 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/banner/post.jpg') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title=" Internet Overdose">
-              
-            </span>
+  
 
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/post.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
           
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
+            <span id="subtitle" data-typed-text=" INTERNET OVERDOSE"></span>
           
         </div>
+
+        
       </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
     
       <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
+        <div id="board"
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/20/setup%E8%AF%AD%E6%B3%95%E7%B3%96/" target="_self">
+          <img src="/img/vue.set()/title.png" srcset="/img/loading.gif" lazyload alt="setup语法糖">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/20/setup%E8%AF%AD%E6%B3%95%E7%B3%96/" target="_self">
+          setup语法糖
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/05/20/setup%E8%AF%AD%E6%B3%95%E7%B3%96/" target="_self">
+        <div>
+          
+          setup语法糖最开始的时候，Vue3的暴露变量必须要return出来，才可以在template中使用。但实话实说这种写法不是很友好。在一个文件中会return多次，同时在写代码时要时刻关注该变量是否暴露，造成了许多麻烦。vue3.2只需在script标签中添加setup，可以帮我们解决这个问题。 组件只需引入不用注册，属性和方法也不用返回，也不用写setup函数，也不用写export defau
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-20 14:58" pubdate>
+              2022-05-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
+            
+              <a href="/tags/Vue/">#Vue</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/20/HTML%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C(rowspan%E3%80%81colspan)/" target="_self">
+          <img src="/img/tableRow/title.jpg" srcset="/img/loading.gif" lazyload alt="HTML表格跨行、跨列操作(rowspan、colspan)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/20/HTML%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C(rowspan%E3%80%81colspan)/" target="_self">
+          HTML表格跨行、跨列操作(rowspan、colspan)
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/05/20/HTML%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C(rowspan%E3%80%81colspan)/" target="_self">
+        <div>
+          
+          在操纵数据表格时，不免会有需要出现跨行，跨列的操作。这里操作表格的HTML的原生方法 一般使用&lt;td&gt;元素的colspan属性来实现单元格跨列操作，使用&lt;td&gt;元素的rowspan属性来实现单元格的跨行操作。 colspan属性规定单元格可横跨的列数，所有浏览器都支持colspan属性。其取值为number，如下图所示：  下面是这个属性的例子和结果的截图。 1234567
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-20 14:58" pubdate>
+              2022-05-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
+            
+              <a href="/tags/HTML/">#HTML</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/20/%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3/" target="_self">
+          <img src="/img/tableRow/title.jpg" srcset="/img/loading.gif" lazyload alt="前端下载相关">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/20/%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3/" target="_self">
+          前端下载相关
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/05/20/%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3/" target="_self">
+        <div>
+          
+          最近在项目中遇到了与下载有关的问题，正好总结一下相关的内容。 如果是本地或同源的资源，直接在a标签中加入downlaod即可。这样不管什么资源都可以直接下载。 1&lt;a href&#x3D;&quot;img&#x2F;1.png&quot; download&#x3D;&quot;download&quot;&gt;下载&lt;&#x2F;a&gt;  下面是用js直接生成a标签的写法。 123456789const a &#x3D; do
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-20 14:58" pubdate>
+              2022-05-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
+            
+              <a href="/tags/Javascript/">#Javascript</a>
+            
+              <a href="/tags/HTML/">#HTML</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/05/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
+          <img src="/img/preview/regex.jpg" srcset="/img/loading.gif" lazyload alt="正则表达式">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
+          正则表达式
+        </a>
+      </h1>
+
+      <a class="index-excerpt" href="/2022/05/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
+        <div>
+          
+          正则表达式(regular expression)描述了一种字符串匹配的模式，可以用来检查一个字符串是否含有某种子串、将匹配的子串做替换或者从某个字符串中取出符合某个条件的子串等。 主要用正则表达式来处理字符串，比如验证某个字符串是否符合规定格式，以及快速的格式化某个字符串。 正则语法 1&#x2F;正则表达式主体&#x2F;修饰符(可选)  正则表达式的创建在JavaScript中创建正则表达式主要有两种方式：
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-20 09:45" pubdate>
+              2022-05-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
+            
+              <a href="/tags/Javascript/">#Javascript</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
   <div class="row mx-auto index-card">
     
@@ -202,12 +510,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/01/24/Vue.set()/" target="_self">
+      <a class="index-excerpt" href="/2022/01/24/Vue.set()/" target="_self">
+        <div>
           
           前几天在开发一个奇形怪状的页面时，发现了一个问题。某些数据赋值后无法修改，只有更新其它数据时才会更新这些数据。后来经过了一索得知了原因，我的属性是动态添加的，但是Vue不能更新在实例创建后添加的属性。 用Vue文档原话可能更好理解一些：**如果在实例创建之后添加新的属性到实例上，它不会触发视图更新** Vue如何追踪变化当你把一个普通的JS对象传给vue实例的data选项时，vue将遍历此对象的所
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -219,18 +527,34 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
+            
+              <a href="/tags/Vue/">#Vue</a>
             
           </div>
         
@@ -243,7 +567,7 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/" target="_self">
-          <img src="/img/arrayErgodic/title.jpg" srcset="/img/loading.gif" lazyload alt="数组循环">
+          <img src="/img/arrayErgodic/title.jpg" srcset="/img/loading.gif" lazyload alt="数组遍历">
         </a>
       </div>
     
@@ -251,16 +575,16 @@
       <h1 class="index-header">
         
         <a href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/" target="_self">
-          数组循环
+          数组遍历
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/" target="_self">
+      <a class="index-excerpt" href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/" target="_self">
+        <div>
           
           在平常的开发中，数组的遍历可以说是一个最常用到的功能了。但是在JavaScriot中数组遍历有很多的形式，遇到哪种情况该用哪种形式也是需要要掌握的。最近在开发的时候就踩了一个坑，所以就想总结一下这几种形式。 for循环可能是最常用可能也最容易被忽略的遍历方式，因为JS有其他花哨的遍历方式，显得最基础的for循环不是那么的易用。循环的例子如下所示： 1234for (let index&#x3D;0; ind
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -272,18 +596,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
             
           </div>
         
@@ -308,12 +646,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2022/01/24/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" target="_self">
+      <a class="index-excerpt" href="/2022/01/24/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/" target="_self">
+        <div>
           
           以前在准备面试的时候对事件循环总是一知半解，直到前几天终于在项目中遇到了这个问题，之后通过导师的讲解和我自己的资料查询，我终于对这个概念有了更深层次的了解。下面来写一下我的感悟。 浏览器拓展首先拓展一下，讲一下浏览器的进程处理机制。首先浏览器本身是多进程，这样的处理方式又多种多样的好处，这里先不展开来讲。这里需要知道浏览器的每一个tab页都代表了一个进程，同时浏览器的这个进程中又包含了许多的线程，
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -325,18 +663,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
             
           </div>
         
@@ -361,12 +713,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/07/30/%E5%90%8E%E5%8F%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_self">
+      <a class="index-excerpt" href="/2021/07/30/%E5%90%8E%E5%8F%B0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" target="_self">
+        <div>
           
           这篇文档是我对后端一个入门的学习，主要是搭建一些环境和框架。不涉及什么原理性的知识。是对自己的知识领域的一个扩充。 安装Java这台电脑连Java都没有安装，首先要安装java。因为都是一些常规的操作，就简略一点的写。就选自己的电脑系统对应版本，大部分人都是windows 64版本。装linux肯定懂得都懂了。之后就按正常的流程安装，和windows装其他软件大体上没什么不同。注意不要有中文目录，
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -378,20 +730,34 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">常用配置</a>
+              <a href="/tags/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">#常用配置</a>
             
-              <a href="/tags/Web%E5%90%8E%E7%AB%AF/">Web后端</a>
+              <a href="/tags/Web%E5%90%8E%E7%AB%AF/">#Web后端</a>
             
           </div>
         
@@ -416,12 +782,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/07/29/Git%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
+      <a class="index-excerpt" href="/2021/07/29/Git%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
+        <div>
           
-          git是一个优秀的版本控制软件，自动记录每个版本的变化。方便版本的回退和团队的协作，至少我现在认识到的优点就只有这些。现在最有感受的系统还是分支系统，可以让团队高效的协作。 git的配置git安装git的下载就是普通的下载，安装的时候可能有一些可需要注意的点就放一个书签来介绍。 https:&#x2F;&#x2F;blog.csdn.net&#x2F;Small_Yogurt&#x2F;article&#x2F;details&#x2F;104966939
-        </a>
-      </p>
+          git是一个优秀的版本控制软件，自动记录每个版本的变化。方便版本的回退和团队的协作，至少我现在认识到的优点就只有这些。现在最有感受的系统还是分支系统，可以让团队高效的协作。 git的配置git安装git的下载就是普通的下载，安装的时候可能有一些可需要注意的点就放一个书签来介绍。 https:&#x2F;&#x2F;blog.csdn.net&#x2F;Small_Yogurt&#x2F;article&#x2F;details
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -433,18 +799,32 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">常用配置</a>
+              <a href="/tags/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">#常用配置</a>
             
           </div>
         
@@ -469,12 +849,12 @@
         </a>
       </h1>
 
-      <p class="index-excerpt">
-        <a href="/2021/07/29/Hexo%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
+      <a class="index-excerpt" href="/2021/07/29/Hexo%E7%9A%84%E9%85%8D%E7%BD%AE/" target="_self">
+        <div>
           
           Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。利用这个框架和github pages就可以快速搭建外网可以访问的博客。下面首先来说如何配置。 github pages的申请github pages可以让每个用户不用配置服务器就可以创建一个互联网可以访问的页面。但是他的申请本身可能有一些需要注意的地方
-        </a>
-      </p>
+        </div>
+      </a>
 
       <div class="index-btm post-metas">
         
@@ -486,20 +866,34 @@
           </div>
         
         
-          <div class="post-meta mr-3">
+          <div class="post-meta mr-3 d-flex align-items-center">
             <i class="iconfont icon-category"></i>
             
-              <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/">技术分享</a>
-            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" class="category-chain-item">技术分享</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
           </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">Web前端</a>
+              <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
             
-              <a href="/tags/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">常用配置</a>
+              <a href="/tags/%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/">#常用配置</a>
             
           </div>
         
@@ -538,35 +932,37 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
-
-
-  <!-- SCRIPTS -->
   
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
     NProgress.configure({"showSpinner":false,"trickleSpeed":100})
@@ -577,40 +973,23 @@
   </script>
 
 
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
 
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
   <script>
     (function (window, document) {
       var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
       
-        typing(title);
+        typing(text);
       
     })(window, document);
   </script>
@@ -620,18 +999,28 @@
 
 
 
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
