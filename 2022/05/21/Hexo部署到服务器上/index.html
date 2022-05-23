@@ -16,25 +16,25 @@
   <meta name="author" content="Fusn126">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在操纵数据表格时，不免会有需要出现跨行，跨列的操作。这里操作表格的HTML的原生方法 一般使用&lt;td&gt;元素的colspan属性来实现单元格跨列操作，使用&lt;td&gt;元素的rowspan属性来实现单元格的跨行操作。hecolspan属性规定单元格可横跨的列数，所有浏览器都支持colspan属性。其取值为number，如下图所示：  下面是这个属性的例子和结果的截图。 123456">
+    <meta name="description" content="在上篇关于Hexo我们把博客部署到了GitHub Pages上，使得我们可以在互联网上去访问博客。但是部署在GitHub有一个问题，因为某些原因，就是大陆和GitHub的连接极其的不稳定，国内大部分时候都无法正常访问GitHub，进而无法访问我们的博客网站。 所以我就想在国内买一个服务器上，把自己的博客部署到这个服务器上。下面是这个过程的一些记录。 首先选择一个云服务器商，本来想选择香港的云服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="表格跨行、跨列操作">
-<meta property="og:url" content="http://example.com/2022/05/20/%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="Hexo部署到服务器">
+<meta property="og:url" content="http://example.com/2022/05/21/Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/index.html">
 <meta property="og:site_name" content="Fusn126的博客">
-<meta property="og:description" content="在操纵数据表格时，不免会有需要出现跨行，跨列的操作。这里操作表格的HTML的原生方法 一般使用&lt;td&gt;元素的colspan属性来实现单元格跨列操作，使用&lt;td&gt;元素的rowspan属性来实现单元格的跨行操作。hecolspan属性规定单元格可横跨的列数，所有浏览器都支持colspan属性。其取值为number，如下图所示：  下面是这个属性的例子和结果的截图。 123456">
+<meta property="og:description" content="在上篇关于Hexo我们把博客部署到了GitHub Pages上，使得我们可以在互联网上去访问博客。但是部署在GitHub有一个问题，因为某些原因，就是大陆和GitHub的连接极其的不稳定，国内大部分时候都无法正常访问GitHub，进而无法访问我们的博客网站。 所以我就想在国内买一个服务器上，把自己的博客部署到这个服务器上。下面是这个过程的一些记录。 首先选择一个云服务器商，本来想选择香港的云服务器">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/img/preview/table.png">
-<meta property="article:published_time" content="2022-05-20T08:58:48.000Z">
-<meta property="article:modified_time" content="2022-05-20T14:13:18.764Z">
+<meta property="og:image" content="http://example.com/img/hexo/title.png">
+<meta property="article:published_time" content="2022-05-21T06:39:48.000Z">
+<meta property="article:modified_time" content="2022-05-23T06:42:51.161Z">
 <meta property="article:author" content="Fusn126">
 <meta property="article:tag" content="Web前端">
-<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="Vue">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/img/preview/table.png">
+<meta name="twitter:image" content="http://example.com/img/hexo/title.png">
   
   
   
-  <title>表格跨行、跨列操作 - Fusn126的博客</title>
+  <title>Hexo部署到服务器 - Fusn126的博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="表格跨行、跨列操作"></span>
+            <span id="subtitle" data-typed-text="Hexo部署到服务器"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-20 16:58" pubdate>
-          2022年5月20日 下午
+        <time datetime="2022-05-21 14:39" pubdate>
+          2022年5月21日 下午
         </time>
       </span>
     
@@ -221,7 +221,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.4k 字
+          3k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
           <!-- compatible with older versions-->
-          12 分钟
+          25 分钟
         
       </span>
     
@@ -271,29 +271,91 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">表格跨行、跨列操作</h1>
+            <h1 style="display: none">Hexo部署到服务器</h1>
             
             <div class="markdown-body">
               
-              <p>在操纵数据表格时，不免会有需要出现跨行，跨列的操作。这里操作表格的HTML的原生方法</p>
-<p>一般使用&lt;td&gt;元素的colspan属性来实现单元格跨列操作，使用&lt;td&gt;元素的rowspan属性来实现单元格的跨行操作。<br>he<br>colspan属性规定单元格可横跨的列数，所有浏览器都支持colspan属性。其取值为number，如下图所示：</p>
-<p><img src="/img/tableRow/image_vvQUDgW4oK.png" srcset="/img/loading.gif" lazyload></p>
-<p>下面是这个属性的例子和结果的截图。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>星期一<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>星期二<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">colspan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>星期天<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+              <p>在上篇关于Hexo我们把博客部署到了GitHub Pages上，使得我们可以在互联网上去访问博客。但是部署在GitHub有一个问题，因为某些原因，就是大陆和GitHub的连接极其的不稳定，国内大部分时候都无法正常访问GitHub，进而无法访问我们的博客网站。</p>
+<p>所以我就想在国内买一个服务器上，把自己的博客部署到这个服务器上。下面是这个过程的一些记录。</p>
+<p>首先选择一个云服务器商，本来想选择香港的云服务器商，这样国内和国外都可以方便的去访问。但是60元一个月的价格，还是让我囊中羞涩停止了脚步。最后选择了腾讯云，没什么别的原因，就是便宜。下面就开始部署，下面这些方法你用那个云服务器厂商的云服务器都是一样的。</p>
+<p>第一步需要注意的是，在选择镜像的时候要选择系统镜像，这里我选择的是CentOS7.6。之后的步骤几乎都是点击下一步就可以了，就不一步一步去教了。</p>
+<p><img src="/img/hexoDeploy/image_8NGokcYRPz.png" srcset="/img/loading.gif" lazyload></p>
+<p>之后成功创建服务器上是如下图的界面。我们接下来要为了可以利用ssh登录服务器，要重置服务器的密码，点击重置密码按钮，按照提示输入密码即可。</p>
+<p><img src="/img/hexoDeploy/image_Q6O-iodElJ.png" srcset="/img/loading.gif" lazyload></p>
+<p>这几步都是个性化配置，嫌弃麻烦可以直接用服务器提供的控制台。但是更通用的方法都是利用SSH去连接。我们进入xshell的界面，点击新建，把IP输入主机位置，之后按照提示输入用户名和密码就好。c</p>
+<p><img src="/img/hexoDeploy/image_6jogJYkYmW.png" srcset="/img/loading.gif" lazyload></p>
+<p>看到这个界面就代表我们成功了，接着只要在这个界面输入命令就可以了。</p>
+<p><img src="/img/hexoDeploy/image_Dnz3JmzzVF.png" srcset="/img/loading.gif" lazyload></p>
+<p>首先我们要更新一下服务器上的git版本，CentOS7.5应该是有预装git，不过版本很低可能不符合我们的需求，所以我们要更新一下git版本。先用下面的命令查看现在服务上git的版本，如果是较高的版本就不用安装了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git --version<br><br>git version 1.8.0<br><br></code></pre></td></tr></table></figure>
 
-<p><img src="/img/tableRow/image_F3UTSPquqt.png" srcset="/img/loading.gif" lazyload></p>
-<p>rowspan属性规定单元格可横跨的行数，所有浏览器都支持rowspan属性。其取值为number，需要注意的是和上面一样rowspan&#x3D;”0”指示浏览器横跨到表格部分的最后一行。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">border</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>星期一<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>星期二<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>星期三<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>如果你的版本和上面一样是1开头的，那就是需要更新git的。</p>
+<p>首先安装依赖库：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel <br><br></code></pre></td></tr></table></figure>
 
-<p><img src="/img/tableRow/image_DPq4B97yFb.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="el-table的跨行方法"><a href="#el-table的跨行方法" class="headerlink" title="el-table的跨行方法"></a>el-table的跨行方法</h2><p>上面介绍了原生的colspan和rowspan方法。但是我们最常用的不是原生的方法而是各种组件库，上面的各种方法也只是让大家认识一下colspan和rowspan属性和他们的作用而已。</p>
-<p>通过给<code>el-table</code>传入<code>span-method</code>方法可以实现合并行或列，方法的参数是一个对象，里面包含当前行<code>row</code>、当前列<code>column</code>、当前行号<code>rowIndex</code>、当前列号<code>columnIndex</code>四个属性。该函数可以返回一个包含两个元素的数组，第一个元素代表<code>rowspan</code>，第二个元素代表<code>colspan</code>。 也可以返回一个键名为<code>rowspan</code>和<code>colspan</code>的对象。</p>
-<p>具体的例子如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">arraySpanMethod</span>: <span class="hljs-keyword">function</span>(<span class="hljs-params">&#123; row, column, rowIndex, columnIndex &#125;</span>) &#123;<br>        <span class="hljs-keyword">if</span>(row.<span class="hljs-property">id</span>==<span class="hljs-string">&#x27;平均工号&#x27;</span>)&#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(column)<br>          <span class="hljs-keyword">if</span>(column.<span class="hljs-property">label</span>==<span class="hljs-string">&#x27;ID&#x27;</span>)&#123;<br>              <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]<br>          &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(column.<span class="hljs-property">label</span>==<span class="hljs-string">&#x27;姓名&#x27;</span>)&#123;<br>              <span class="hljs-keyword">return</span> [<span class="hljs-number">0</span>,<span class="hljs-number">0</span>]<br>          &#125;<br>        &#125;  <br>    &#125;,<br></code></pre></td></tr></table></figure>
+<p>之后安装编译工具：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install gcc perl-ExtUtils-MakeMaker package<br><br></code></pre></td></tr></table></figure>
 
-<p>最后的效果如下：</p>
-<p><img src="/img/tableRow/image_EsDyuRAXcy.png" srcset="/img/loading.gif" lazyload></p>
-<p>需要注意的有两点，一是el-table没有原生表格那种单元格的概念（当然在底层实现有的），所以我们需要传入四个参数“定位”单元格，然后返回一个[<code>rowspan</code>, <code>colspan</code>]的数组或是对象。分别代表在行和列上分别占了几个单元格。二是这里的rowspan和colspan的值，1是代表单元格本身的长度，而0是代表没有长度，这里和原生的地方有区别需要注意一下。</p>
+<p>选择一个目录来存放下载下来的 git 安装包。这里选择了<code>/usr/local/src</code> 目录。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /usr/local/src<br><br></code></pre></td></tr></table></figure>
+
+<p>到官网找一个新版稳定的源码包下载到 <code>/usr/local/src</code> 文件夹里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://www.kernel.org/pub/software/scm/git/git-2.30.0.tar.gz<br><br></code></pre></td></tr></table></figure>
+
+<p>下载成功之后，在当前目录下解压 <code>git-2.30.0.tar.gz</code>，之后进入到该目录下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar -zvxf git-2.30.0.tar.gz<br><br><span class="hljs-built_in">cd</span> git-2.30.0<br><br></code></pre></td></tr></table></figure>
+
+<p>执行编译，并把其安装到<code>/usr/local/git</code>下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">make all prefix=/usr/local/git<br><br>make install prefix=/usr/local/git<br><br></code></pre></td></tr></table></figure>
+
+<p>最后把git 添加到环境变量中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;export PATH=$PATH:/usr/local/git/bin&#x27;</span> &gt;&gt; /etc/bashrc<br><br><span class="hljs-built_in">source</span> /etc/bashrc<br><br></code></pre></td></tr></table></figure>
+
+<p>最后我们再利用最开始的命令来查看一遍git的版本，如果是我们安装的版本就对了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git --version<br><br>git version 2.30.0<br><br></code></pre></td></tr></table></figure>
+
+<p>安装完成git之后，其他教程都是直接服务器直接和本地建立连接，直接利用<code>hexo d</code>命令来本地的博客部署到服务器上，但是我不只这一个本地，以后也可能要换服务器上。每次都要配置一遍会变得麻烦。所以我这里用了一个邪道的方法，我们不是把博客部署到了Github Pages上了吗，我们第一次直接用<code>git clone</code>把Github上的文件克隆下来，以后每次更新就直接pull就好了。下面是操作方法：</p>
+<p>首先我们还是要为服务器设置用户名和邮箱：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git  config  --global  user.name  <span class="hljs-string">&quot;user name&quot;</span><br>git  config  --global  user.email  <span class="hljs-string">&quot;your email&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>之后生成对应的SSH Key：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <span class="hljs-string">&quot;your email&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>利用如下命令查看key的值：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> ~/.ssh/id_rsa.pub<br></code></pre></td></tr></table></figure>
+
+<p>之后把出现的值复制到GitHub的设置页面上，前期的准备就完成了：</p>
+<p><img src="/img/hexoDeploy/image_gLy8ODZcCe.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/img/hexoDeploy/image_RteWxHLGux.png" srcset="/img/loading.gif" lazyload></p>
+<p>下面是正式的步骤，首先我们进入到<code>/home</code>文件夹，克隆项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> git@github.com:Fusn126/fusn126.github.io.git<br></code></pre></td></tr></table></figure>
+
+<p>之后每次想要更新项目时，现在本地运行<code>hexo d</code>命令，之后直接连接服务器运行pull命令就好：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> /home/blog<br><br>git pull<br></code></pre></td></tr></table></figure>
+
+<p>把项目放到指定位置，我们最后来部署服务器。服务器上这里选用的nginx，配置比较简单，不仅可以用作反代理，也可以正常当作服务器来使用，首先我们在服务器安装nginx：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">yum install -y nginx<br><br></code></pre></td></tr></table></figure>
+
+<p>启动 Nginx：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">service nginx start<br><br></code></pre></td></tr></table></figure>
+
+<p>测试 Nginx 服务器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">wget https://127.0.0.1<br><br></code></pre></td></tr></table></figure>
+
+<p>能够正常获取欢迎页面说明Nginx安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">Connecting to 127.0.0.1:80... connected.<br>HTTP request sent, awaiting response... 200 OK<br>Length: 43704 (43K) [text/html]<br>Saving to: ‘index.html’<br><br>100%[=======================================&gt;] 43,704      --.-K/s   <span class="hljs-keyword">in</span> 0s<br><br>2018-03-09 23:04:09 (487 MB/s) - ‘index.html’ saved [43704/43704]<br><br></code></pre></td></tr></table></figure>
+
+<p>之后去配置Nginx的配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">nginx -t<br><br></code></pre></td></tr></table></figure>
+
+<p>修改Nginx的默认配置，其中 vim 后边就是刚才查到的安装位置（每个人可能都不一样）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /etc/nginx/nginx.conf<br><br></code></pre></td></tr></table></figure>
+
+<p>按方向键，找到如下位置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">server</span> &#123;<br>    <span class="hljs-string">listen</span> <span class="hljs-number">80</span> <span class="hljs-string">default_server;</span><br>    <span class="hljs-string">listen</span> [<span class="hljs-string">::</span>]<span class="hljs-string">:80</span> <span class="hljs-string">default_server;</span><br>    <span class="hljs-string">root</span> <span class="hljs-string">/home/blog;</span>    <span class="hljs-comment">#需要修改</span><br>    <br>    <span class="hljs-string">server_name</span> <span class="hljs-string">www.bujige.net;</span> <span class="hljs-comment">#需要修改</span><br>    <br>    <span class="hljs-comment"># Load configuration files for the default server block.</span><br>    <span class="hljs-string">include</span> <span class="hljs-string">/etc/nginx/default.d/*.conf;</span><br>    <span class="hljs-string">location</span> <span class="hljs-string">/</span> &#123;<br>    &#125;<br>    <span class="hljs-string">error_page</span> <span class="hljs-number">404</span> <span class="hljs-string">/404.html;</span><br>        <span class="hljs-string">location</span> <span class="hljs-string">=</span> <span class="hljs-string">/40x.html</span> &#123;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>按<code>i</code>键进入插入模式，将其中的 root 值改为 <code>/home/blog</code> （刚才创建的托管仓库目录）。将 server_name 值改成你的域名。之后按<code>esc</code>退出插入模式，输入<code>:wq</code>保存刚才输入的内容。</p>
+<p>完成上面所有的操作后，直接在浏览器中输入服务器ip地址就可以，我们的博客就直接会直接出现。在这些完成之后，我们还可以配置域名，这些就放在以后去详细补充。</p>
 
               
             </div>
@@ -328,7 +390,7 @@
       
         <a href="/tags/Web%E5%89%8D%E7%AB%AF/">#Web前端</a>
       
-        <a href="/tags/HTML/">#HTML</a>
+        <a href="/tags/Vue/">#Vue</a>
       
     </div>
   
@@ -340,8 +402,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>表格跨行、跨列操作</div>
-      <div>http://example.com/2022/05/20/表格跨行、跨列操作/</div>
+      <div>Hexo部署到服务器</div>
+      <div>http://example.com/2022/05/21/Hexo部署到服务器上/</div>
     </div>
     <div class="license-meta">
       
@@ -353,7 +415,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年5月20日</div>
+          <div>2022年5月21日</div>
         </div>
       
       
@@ -383,18 +445,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/21/Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" title="Hexo部署到服务器">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hexo部署到服务器</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/20/setup%E8%AF%AD%E6%B3%95%E7%B3%96/" title="Vue3中的setup语法糖">
-                        <span class="hidden-mobile">Vue3中的setup语法糖</span>
+                      <a href="/2022/05/20/%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C/" title="表格跨行、跨列操作">
+                        <span class="hidden-mobile">表格跨行、跨列操作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
