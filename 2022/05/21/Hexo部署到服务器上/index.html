@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/hexo/title.png">
 <meta property="article:published_time" content="2022-05-21T06:39:48.000Z">
-<meta property="article:modified_time" content="2022-05-23T06:49:24.779Z">
+<meta property="article:modified_time" content="2022-06-08T07:20:40.200Z">
 <meta property="article:author" content="Fusn126">
 <meta property="article:tag" content="Web前端">
 <meta property="article:tag" content="Vue">
@@ -221,7 +221,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          3k 字
+          4k 字
         
       </span>
     
@@ -233,7 +233,7 @@
         
         
           <!-- compatible with older versions-->
-          25 分钟
+          34 分钟
         
       </span>
     
@@ -356,6 +356,25 @@
 
 <p>按<code>i</code>键进入插入模式，将其中的 root 值改为 <code>/home/blog</code> （刚才创建的托管仓库目录）。将 server_name 值改成你的域名。之后按<code>esc</code>退出插入模式，输入<code>:wq</code>保存刚才输入的内容。</p>
 <p>完成上面所有的操作后，直接在浏览器中输入服务器ip地址就可以，我们的博客就直接会直接出现。在这些完成之后，我们还可以配置域名，这些就放在以后去详细补充。</p>
+<h2 id="配置SSL证书"><a href="#配置SSL证书" class="headerlink" title="配置SSL证书"></a>配置SSL证书</h2><p>域名的配置操作十分简单，几乎都是在网站上点点，这里就不详细介绍了，就是如果服务器是国内的服务器的话，备案的时候有一些麻烦。</p>
+<p>配置好域名之后，我们仍然用的是http连接。众所周知，http连接不是很安全，我们就顺手申请一个免费的证书，配置好https。</p>
+<p>申请证书的过程就不详细描述了，申请一个免费的证书不是很麻烦。主要讲一下怎么配置，我们申请完成之后，可以下载证书的文件具体如下图所示：</p>
+<p><img src="/img/hexoDeploy/image_U54Mu56LGC.png" srcset="/img/loading.gif" lazyload></p>
+<p>把这个几个文件全部转移到服务器上你所知道的地址上（其实应该只转移安全证书和key文件就好，不过转移其他文件也不太占空间）。</p>
+<p>接下来就是就是修改nginx的配置文件，如果不知道配置文件的位置在哪里，可以输入下面命令查找在哪里：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nginx -t<br></code></pre></td></tr></table></figure>
+
+<p><img src="/img/hexoDeploy/image_rZYEjusDif.png" srcset="/img/loading.gif" lazyload></p>
+<p>下面利用vim来修改配置文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /etc/nginx/nginx.conf<br></code></pre></td></tr></table></figure>
+
+<p><img src="/img/hexoDeploy/image_yxi9Jb1-PB.png" srcset="/img/loading.gif" lazyload></p>
+<p>把server下面的内容按照如下填写就好：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-section">server</span> &#123;<br>    <span class="hljs-attribute">listen</span>       <span class="hljs-number">443</span> ssl;<br>    <span class="hljs-attribute">listen</span>       [::]:<span class="hljs-number">443</span> ssl http2;<br>    <span class="hljs-attribute">server_name</span>  fusn.site;<br>    <span class="hljs-attribute">root</span>         /home/blog;<br><br>    <span class="hljs-attribute">ssl_certificate</span> <span class="hljs-string">&quot;/etc/nginx/conf.d/fusn.site_bundle.crt&quot;</span>;<br>    <span class="hljs-attribute">ssl_certificate_key</span> <span class="hljs-string">&quot;/etc/nginx/conf.d/fusn.site.key&quot;</span>;<br>    <span class="hljs-attribute">ssl_session_timeout</span> <span class="hljs-number">5m</span>;<br>    <span class="hljs-attribute">ssl_protocols</span> TLSv1.<span class="hljs-number">2</span> TLSv1.<span class="hljs-number">3</span>;<br>    <span class="hljs-attribute">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;<br>    <span class="hljs-attribute">ssl_prefer_server_ciphers</span> <span class="hljs-literal">on</span>;<br><br><br>    <span class="hljs-comment"># Load configuration files for the default server block.</span><br>    <span class="hljs-attribute">include</span> /etc/nginx/default.d/<span class="hljs-regexp">*.conf</span>;<br><br><br>    <span class="hljs-attribute">error_page</span> <span class="hljs-number">404</span> /<span class="hljs-number">404</span>.html;<br>    <span class="hljs-section">location</span> = /<span class="hljs-number">404</span>.html &#123;<br>    &#125;<br><br>    <span class="hljs-attribute">error_page</span> <span class="hljs-number">500</span> <span class="hljs-number">502</span> <span class="hljs-number">503</span> <span class="hljs-number">504</span> /50x.html;<br>    <span class="hljs-section">location</span> = /50x.html &#123;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>之后运行重启命令，即可访问https的页面：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">service nginx restart<br></code></pre></td></tr></table></figure>
+
 
               
             </div>
