@@ -4,7 +4,32 @@
   
   
   <entry>
-    <title>Pinia</title>
+    <title>OpenVPN3在linux下的使用方法</title>
+    <link href="/2022/10/13/OpenVPN3%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <url>/2022/10/13/OpenVPN3%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<p>最近忽然突发奇想好奇公司的vpn能否在linux环境下运行，试了一下果然是可以的。在这里记录一下相关的命令和安装运行的流程。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我现在的linux版本是Manjaro所以很容易的利用yay就可以完成安装：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">yay -S openvpn3<br></code></pre></td></tr></table></figure><p>按照相关的提示一路往下，最后就可以完成OpenVPN3在Manjaro下的安装操作。</p><h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p>我们每次配置的vpn的时候都会在这个页面，下载一个配置文件：</p><p><img src="/img/openVPN3/image_HYyXjK9Nk5.png"></p><p>我们现在把下载的文件放在一个可以找到的位置，然后在那个位置打开终端：</p><p><img src="/img/openVPN3/image_CzWkzRVDMa.png"></p><p>输入如下的命令：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openvpn3 config-import --config client.ovpn<br></code></pre></td></tr></table></figure><p>出现如下的命令则导入配置文件成功：</p><p><img src="/img/openVPN3/image_mxaZ54oB0p.png"></p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在导入了配置文件导入之后，我们就可以在任意地方打开终端开启vpn：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openvpn3 session-start --config client.ovpn<br></code></pre></td></tr></table></figure><p>接下来拿着提示输入给定的用户名和密码即可，出现一下提示则开启成功：</p><p><img src="/img/openVPN3/image_DILjRkJOHd.png"></p><p>在成功开启后，我们可以查看开启的session列表。其中的信息可以让我们关闭连接。输入以下命令来查看session列表：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openvpn3 sessions-list<br></code></pre></td></tr></table></figure><p>输入命令会提示会提示下图的信息：</p><p><img src="/img/openVPN3/image_p-V0a3tB1a.png"></p><p>我们可以根据其中的path 信息来关闭连接：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">openvpn3 session-manage --session-path /net/openvpn/v3/sessions/88edef7bs9d0es4e4fs87cbse46955588fd9  --disconnect<br></code></pre></td></tr></table></figure><p>弹出如下信息则代表我们关闭成功：</p><p><img src="/img/openVPN3/image_nhwXdVE4t_.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术分享</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>软件教程</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Pinia的基础使用方法</title>
     <link href="/2022/09/20/Pinia/"/>
     <url>/2022/09/20/Pinia/</url>
     
