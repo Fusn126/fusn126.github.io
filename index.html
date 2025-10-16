@@ -7,8 +7,11 @@
 
 <head>
   <meta charset="UTF-8">
+
   <link rel="apple-touch-icon" sizes="76x76" href="/img/computer.png">
   <link rel="icon" href="/img/computer.png">
+  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -37,7 +40,7 @@
 <!-- 主题依赖的图标库，不要自行修改 -->
 <!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
 
 
 
@@ -58,7 +61,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null},"gtag":null,"woyaola":null,"cnzz":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -67,9 +70,11 @@
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+  
+
 
   
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 
 <body>
@@ -82,7 +87,7 @@
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
-      <strong>Fusn的博客</strong>
+      <strong>Fusn126的博客</strong>
     </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
@@ -100,9 +105,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -112,9 +117,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
-                归档
+                <span>归档</span>
               </a>
             </li>
           
@@ -124,9 +129,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -136,9 +141,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -148,9 +153,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
-                关于
+                <span>关于</span>
               </a>
             </li>
           
@@ -158,15 +163,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -183,7 +189,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=" INTERNET OVERDOSE"></span>
+            <span id="subtitle" data-typed-text="竭尽兮人事之所能"></span>
           
         </div>
 
@@ -225,16 +231,16 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/10/13/OpenVPN3%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" target="_self">
           OpenVPN3在linux下的使用方法
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/10/13/OpenVPN3%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/10/13/OpenVPN3%E5%9C%A8linux%E4%B8%8B%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" target="_self">
         <div>
-          
           最近忽然突发奇想好奇公司的vpn能否在linux环境下运行，试了一下果然是可以的。在这里记录一下相关的命令和安装运行的流程。 安装我现在的linux版本是Manjaro所以很容易的利用yay就可以完成安装： 1yay -S openvpn3  按照相关的提示一路往下，最后就可以完成OpenVPN3在Manjaro下的安装操作。 导入我们每次配置的vpn的时候都会在这个页面，下载一个配置文件：  我
         </div>
       </a>
@@ -292,16 +298,16 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/09/20/Pinia/" target="_self">
           Pinia的基础使用方法
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/09/20/Pinia/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/09/20/Pinia/" target="_self">
         <div>
-          
           Vue的状态管理工具大多数人第一个想到的应该都是Vuex，但是Vuex对Vue3的支持更新比较慢，现阶段来看对TypeScript的支持也是惨不忍睹。所以这时一个比Vuex更简单，对TypeScript支持更好的工具就出现了，他就是Pinia。 安装Pinia1npm install pinia  之后再main.ts（或者main.js）中写下如下代码就好，以下的写法只适合Vue3： 123im
         </div>
       </a>
@@ -361,16 +367,16 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/05/25/margin%E8%B4%9F%E9%97%B4%E8%B7%9D/" target="_self">
           margin的负间距相关
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/05/25/margin%E8%B4%9F%E9%97%B4%E8%B7%9D/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/05/25/margin%E8%B4%9F%E9%97%B4%E8%B7%9D/" target="_self">
         <div>
-          
           margin的负值平常很少用到过，但是最近接触了经典的圣杯布局和双飞翼布局，其中利用到了margin的负值。还是希望具体的接触一下相关的原理。 margin负值的原理为了方便理解负值margin，我们引入参考线的定义，参考线就是就是margin移动的基准点，而margin的值就是移动的数值。margin的参考线有两类，一类是top、left，它们以外元素作为参考线，另一类是right、bottom
         </div>
       </a>
@@ -430,16 +436,16 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/05/21/Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" target="_self">
           Hexo部署到服务器
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/05/21/Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/05/21/Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" target="_self">
         <div>
-          
           在上篇关于Hexo我们把博客部署到了GitHub Pages上，使得我们可以在互联网上去访问博客。但是部署在GitHub有一个问题，因为某些原因，就是大陆和GitHub的连接极其的不稳定，国内大部分时候都无法正常访问GitHub，进而无法访问我们的博客网站。 所以我就想在国内买一个服务器上，把自己的博客部署到这个服务器上。下面是这个过程的一些记录。 首先选择一个云服务器商，本来想选择香港的云服务器
         </div>
       </a>
@@ -499,16 +505,16 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/05/20/%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C/" target="_self">
           表格跨行、跨列操作
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/05/20/%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/05/20/%E8%A1%A8%E6%A0%BC%E8%B7%A8%E8%A1%8C%E3%80%81%E8%B7%A8%E5%88%97%E6%93%8D%E4%BD%9C/" target="_self">
         <div>
-          
           在操纵数据表格时，不免会有需要出现跨行，跨列的操作。这里操作表格的HTML的原生方法 一般使用&lt;td&gt;元素的colspan属性来实现单元格跨列操作，使用&lt;td&gt;元素的rowspan属性来实现单元格的跨行操作。hecolspan属性规定单元格可横跨的列数，所有浏览器都支持colspan属性。其取值为number，如下图所示：  下面是这个属性的例子和结果的截图。 123456
         </div>
       </a>
@@ -568,16 +574,16 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/05/20/setup%E8%AF%AD%E6%B3%95%E7%B3%96/" target="_self">
           Vue3的setup语法糖
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/05/20/setup%E8%AF%AD%E6%B3%95%E7%B3%96/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/05/20/setup%E8%AF%AD%E6%B3%95%E7%B3%96/" target="_self">
         <div>
-          
           setup语法糖最开始的时候，Vue3的暴露变量必须要return出来，才可以在template中使用。但实话实说这种写法不是很友好。在一个文件中会return多次，同时在写代码时要时刻关注该变量是否暴露，造成了许多麻烦。vue3.2只需在script标签中添加setup，可以帮我们解决这个问题。 组件只需引入不用注册，属性和方法也不用返回，也不用写setup函数，也不用写export defau
         </div>
       </a>
@@ -637,17 +643,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/05/20/%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3/" target="_self">
           前端下载的一些方法
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/05/20/%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/05/20/%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3/" target="_self">
         <div>
-          
-          最近在项目中遇到了与下载有关的问题，正好总结一下相关的内容。 如果是本地或同源的资源，直接在a标签中加入downlaod即可。这样不管什么资源都可以直接下载。 1&lt;a href&#x3D;&quot;img&#x2F;1.png&quot; download&#x3D;&quot;download&quot;&gt;下载&lt;&#x2F;a&gt;  下面是用js直接生成a标签的写法。 123456789const a &#x3D; do
+          最近在项目中遇到了与下载有关的问题，正好总结一下相关的内容。 如果是本地或同源的资源，直接在a标签中加入downlaod即可。这样不管什么资源都可以直接下载。 1&lt;a href=&quot;img/1.png&quot; download=&quot;download&quot;&gt;下载&lt;/a&gt;  下面是用js直接生成a标签的写法。 123456789const a = do
         </div>
       </a>
 
@@ -708,17 +714,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/05/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
           前端中的正则表达式
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/05/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/05/20/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" target="_self">
         <div>
-          
-          正则表达式(regular expression)描述了一种字符串匹配的模式，可以用来检查一个字符串是否含有某种子串、将匹配的子串做替换或者从某个字符串中取出符合某个条件的子串等。 主要用正则表达式来处理字符串，比如验证某个字符串是否符合规定格式，以及快速的格式化某个字符串。 正则语法 1&#x2F;正则表达式主体&#x2F;修饰符(可选)  正则表达式的创建在JavaScript中创建正则表达式主要有两种方式：
+          正则表达式(regular expression)描述了一种字符串匹配的模式，可以用来检查一个字符串是否含有某种子串、将匹配的子串做替换或者从某个字符串中取出符合某个条件的子串等。 主要用正则表达式来处理字符串，比如验证某个字符串是否符合规定格式，以及快速的格式化某个字符串。 正则语法 1/正则表达式主体/修饰符(可选)  正则表达式的创建在JavaScript中创建正则表达式主要有两种方式：
         </div>
       </a>
 
@@ -777,16 +783,16 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/01/24/Vue.set()/" target="_self">
           Vue2中的set的使用
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/01/24/Vue.set()/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/01/24/Vue.set()/" target="_self">
         <div>
-          
           前几天在开发一个奇形怪状的页面时，发现了一个问题。某些数据赋值后无法修改，只有更新其它数据时才会更新这些数据。后来经过了一索得知了原因，我的属性是动态添加的，但是Vue不能更新在实例创建后添加的属性。 用Vue文档原话可能更好理解一些：**如果在实例创建之后添加新的属性到实例上，它不会触发视图更新** Vue如何追踪变化当你把一个普通的JS对象传给vue实例的data选项时，vue将遍历此对象的所
         </div>
       </a>
@@ -846,17 +852,17 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/" target="_self">
           Javascript之数组遍历
         </a>
-      </h1>
+      </h2>
 
-      <a class="index-excerpt" href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/" target="_self">
+      
+      <a class="index-excerpt " href="/2022/01/24/%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86/" target="_self">
         <div>
-          
-          在平常的开发中，数组的遍历可以说是一个最常用到的功能了。但是在JavaScriot中数组遍历有很多的形式，遇到哪种情况该用哪种形式也是需要要掌握的。最近在开发的时候就踩了一个坑，所以就想总结一下这几种形式。 for循环可能是最常用可能也最容易被忽略的遍历方式，因为JS有其他花哨的遍历方式，显得最基础的for循环不是那么的易用。循环的例子如下所示： 1234for (let index&#x3D;0; ind
+          在平常的开发中，数组的遍历可以说是一个最常用到的功能了。但是在JavaScriot中数组遍历有很多的形式，遇到哪种情况该用哪种形式也是需要要掌握的。最近在开发的时候就踩了一个坑，所以就想总结一下这几种形式。 for循环可能是最常用可能也最容易被忽略的遍历方式，因为JS有其他花哨的遍历方式，显得最基础的for循环不是那么的易用。循环的例子如下所示： 1234for (let index=0; ind
         </div>
       </a>
 
@@ -990,7 +996,6 @@
 </div>
 
   
-  
 </div>
 
   </footer>
@@ -1029,8 +1034,6 @@
       
     })(window, document);
   </script>
-
-
 
 
 
